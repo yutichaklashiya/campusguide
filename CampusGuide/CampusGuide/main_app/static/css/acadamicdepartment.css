@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #eaf3fe;
+}
+
+/* HEADER */
+.top-header {
+  height: 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  border-top: 2px solid #1976d2;
+  border-bottom: 2px solid #1976d2;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left img {
+  width: 70px;
+}
+
+.header-left h1 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.header-left h1 span {
+  color: #1976d2;
+}
+
+.header-right {
+  display: flex;
+  gap: 25px;
+}
+
+.header-right a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-right a:hover {
+  color: #1976d2;
+}
+
+/* TITLE */
+.page-title {
+  text-align: center;
+  margin: 35px 0 20px;
+}
+
+.page-title h1 {
+  font-size: 36px;
+  color: #1976d2;
+}
+
+.page-title p {
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ================= GRID = 3 CARDS PER ROW ================= */
+.departments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 🔥 3 cards per row */
+  gap: 30px;
+  padding: 20px 60px 60px;
+}
+
+/* CARD */
+.dept-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transition: all 0.35s ease;
+}
+
+/* HOVER EFFECT */
+.dept-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 45px rgba(25,118,210,0.35);
+}
+
+/* INSTITUTE NAME */
+.dept-card h3 {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px;
+  line-height: 1.4;
+}
+
+/* COURSE LIST */
+.dept-card ul {
+  padding: 18px 22px 22px;
+}
+
+.dept-card ul li {
+  font-size: 14px;
+  margin-bottom: 7px;
+  color: #333;
+}
+
+/* RESPONSIVE (Mobile & Tablet) */
+@media (max-width: 1024px) {
+  .departments {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .departments {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}

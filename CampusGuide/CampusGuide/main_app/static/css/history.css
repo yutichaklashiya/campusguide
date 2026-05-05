@@ -1,0 +1,288 @@
+/* ================= CHAT LAYOUT WRAPPER ================= */
+/* Wrapper is transparent – does NOT change chat-container sizing at all */
+.chat-layout-wrapper {
+  display: contents; /* acts as if it doesn't exist for layout purposes */
+}
+
+/* ================= HISTORY TOGGLE BUTTON ================= */
+.history-toggle-btn {
+  position: fixed;
+  top: 100px;
+  left: 18px;
+  z-index: 200;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #4a6cf7, #6c5ce7);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(74, 108, 247, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+}
+
+.history-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 22px rgba(74, 108, 247, 0.55);
+}
+
+.history-toggle-btn.active {
+  background: linear-gradient(135deg, #6c5ce7, #a855f7);
+}
+
+/* ================= HISTORY SIDEBAR ================= */
+/* Fixed overlay – does NOT affect chat container at all */
+.history-sidebar {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 0 14px 14px 0;
+  box-shadow: 4px 0 24px rgba(74, 108, 247, 0.12);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 110px);
+  max-height: 600px;
+  opacity: 0;
+  z-index: 250;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+  border-right: 2px solid rgba(74, 108, 247, 0.12);
+}
+
+.history-sidebar.open {
+  width: 320px;
+  opacity: 1;
+}
+
+/* ================= SIDEBAR HEADER ================= */
+.history-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid rgba(74, 108, 247, 0.1);
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(74, 108, 247, 0.06) 0%, rgba(108, 92, 231, 0.04) 100%);
+}
+
+.history-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2937;
+  flex: 1;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.history-close-btn,
+.history-clear-btn {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.history-close-btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: #fca5a5;
+}
+
+.history-clear-btn:hover {
+  background: #fef3c7;
+  color: #d97706;
+  border-color: #fcd34d;
+}
+
+/* ================= HISTORY LIST ================= */
+.history-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(74, 108, 247, 0.2) transparent;
+}
+
+.history-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: rgba(74, 108, 247, 0.25);
+  border-radius: 10px;
+}
+
+.history-empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  padding: 40px 10px;
+  font-style: italic;
+}
+
+/* ================= HISTORY ITEM ================= */
+.history-item {
+  background: #ffffff;
+  border: 1px solid #e8ecf4;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.history-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #4a6cf7, #6c5ce7);
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.history-item:hover {
+  border-color: rgba(74, 108, 247, 0.3);
+  box-shadow: 0 2px 12px rgba(74, 108, 247, 0.1);
+  transform: translateX(2px);
+}
+
+.history-item:hover::before {
+  opacity: 1;
+}
+
+/* Question */
+.history-question {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.4;
+}
+
+.history-question-icon {
+  flex-shrink: 0;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+.history-question-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+/* Answer - truncated by default */
+.history-answer {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.5;
+  overflow: hidden;
+  max-height: 20px;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding-left: 20px;
+}
+
+.history-answer::before {
+  content: '\1F916';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 11px;
+}
+
+/* Fade-out gradient when collapsed */
+.history-answer-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: linear-gradient(transparent, #ffffff);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Expanded state */
+.history-item.expanded .history-answer {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-item.expanded .history-answer-fade {
+  opacity: 0;
+}
+
+/* Expand indicator */
+.history-expand-hint {
+  font-size: 10px;
+  color: #9ca3af;
+  text-align: right;
+  margin-top: 4px;
+  transition: color 0.2s ease;
+}
+
+.history-item:hover .history-expand-hint {
+  color: #4a6cf7;
+}
+
+.history-item.expanded .history-expand-hint {
+  display: none;
+}
+
+/* Timestamp */
+.history-time {
+  font-size: 10px;
+  color: #c4c9d4;
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 640px) {
+  .history-sidebar {
+    top: 0;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0 14px 14px 0;
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .history-sidebar.open {
+    width: 85vw;
+    max-width: 340px;
+  }
+
+  .history-toggle-btn {
+    top: auto;
+    bottom: 20px;
+    left: 18px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 20px rgba(74, 108, 247, 0.5);
+  }
+}

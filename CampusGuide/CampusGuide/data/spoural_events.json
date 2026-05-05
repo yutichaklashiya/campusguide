@@ -1,0 +1,160 @@
+[
+  {
+    "category": "Sports Events Summary",
+    "event_name": "Full Sports List",
+    "description": "CHARUSAT Spoural'26 Sports Events include: Cricket, Volleyball, Basketball, Football, Kabaddi, Chess, Table Tennis, Tug of War, Badminton, Handball, Frisbee, and Mix Tug of War."
+  },
+  {
+    "category": "Cultural Events Summary",
+    "event_name": "Full Cultural List",
+    "description": "CHARUSAT Spoural'26 Cultural Events include: Solo Singing, Solo Dance, Group Dance, Folk Dance, Fashion Show, Mr. & Ms. Charusat, Skit, Instrument Playing, Stand Up, Classical Dance, Ad Making, Short Film Making, Storytelling, Quiz, Debate, Elocution, Vaad Vivad, Poetry Writing, Rangoli, Mehndi, Nail Art, Clay Modelling, On the Spot Painting, Cartooning, Collage Making, and Photography."
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Cricket",
+    "participants": {
+      "boys": "11-15 members",
+      "girls": "11-15 members",
+      "faculty": "Cricket (M)"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Volleyball",
+    "participants": {
+      "boys": "10-12 members",
+      "girls": "10-12 members",
+      "faculty": "Volleyball (M)"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Basketball",
+    "participants": {
+      "boys": "10-12 members",
+      "girls": "10-12 members",
+      "faculty": "N/A"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Football",
+    "participants": {
+      "boys": "6A Side (10-12 members)",
+      "girls": "5A Side (10-12 members)",
+      "min": 7,
+      "max": 12,
+      "faculty": "N/A"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Kabaddi",
+    "participants": {
+      "boys": "7-12 members",
+      "girls": "7-12 members",
+      "faculty": "N/A"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Chess",
+    "participants": {
+      "boys": "1-5 members",
+      "girls": "1-5 members",
+      "faculty": "Chess (Mix)"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Table Tennis",
+    "participants": {
+      "boys": "1-5 members",
+      "girls": "1-5 members",
+      "faculty": "Table Tennis (M&F)"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Tug of War",
+    "participants": {
+      "boys": "8-12 members",
+      "girls": "8-12 members",
+      "faculty": "Tug of War (M&F)"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Badminton",
+    "participants": {
+      "boys": "1-5 members",
+      "girls": "1-5 members",
+      "faculty": "Badminton (M&F)"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Handball",
+    "participants": {
+      "boys": "10-12 members",
+      "girls": "10-12 members",
+      "faculty": "N/A"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Frisbee",
+    "participants": {
+      "composition": "Mix Frisbee",
+      "total": "12 members",
+      "faculty": "N/A"
+    }
+  },
+  {
+    "category": "Sports Events",
+    "event_name": "Mix Tug of War",
+    "participants": {
+      "composition": "4 Boys + 4 Girls",
+      "total": "8 members",
+      "faculty": "N/A"
+    }
+  },
+  {
+    "category": "Cultural Events",
+    "sub_category": "Main Stage",
+    "events": [
+      "Solo Singing",
+      "Solo Dance",
+      "Group Dance",
+      "Folk Dance",
+      "Fashion Show",
+      "Mr. & Ms. Charusat",
+      "Skit",
+      "Instrument Playing",
+      "Stand Up",
+      "Classical Dance (Solo)",
+      "Ad Making",
+      "Short Film Making",
+      "Storytelling"
+    ]
+  },
+  {
+    "category": "Cultural Events",
+    "sub_category": "Sub Stage",
+    "events": [
+      "Quiz",
+      "Debate",
+      "Elocution",
+      "Vaad Vivad",
+      "Poetry Writing",
+      "Rangoli",
+      "Mehndi",
+      "Nail Art",
+      "Clay Modelling",
+      "On the Spot Painting",
+      "Cartooning",
+      "Collage Making",
+      "Photography"
+    ]
+  }
+]

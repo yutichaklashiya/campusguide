@@ -1,0 +1,60 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% trans "Campus Guide - Login" %}</title>
+
+  <!-- DJANGO STATIC CSS -->
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+    <span class="title">
+      {% trans "Campus" %}<span>{% trans "Guide" %}</span>
+    </span>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <!-- LOGIN FORM -->
+    <form class="login-form" method="post">
+      {% csrf_token %}
+
+      <h2>{% trans "Login" %}</h2>
+      <p>{% trans "Login to continue" %}</p>
+
+      <input type="text" name="username" placeholder="{% trans "Username" %}" required>
+      <input type="password" name="password" placeholder="{% trans "Password" %}" required>
+      <input type="hidden" name="next" value="{{ next }}">
+      <span class="link">
+      <a href="{% url 'password_reset' %}">{% trans "Forgot password?" %}</a>
+      </span>
+      <button type="submit">{% trans "Login" %}</button>
+      
+      {% if message %}
+        <p style="color:green;">{{ message }}</p>
+      {% endif %}
+      {% if error %}
+        <p style="color:red;">{{ error }}</p>
+      {% endif %}
+      <span class="link">
+        {% trans "Don’t have an account?" %}
+        <a href="{% url 'signup' %}">{% trans "Sign up" %}</a>
+      </span>
+    </form>
+
+    <!-- ROBOT IMAGE -->
+    <div class="robot">
+      <img src="{% static 'images/back2.jpeg' %}" alt="Robot">
+    </div>
+
+  </div>
+
+</body>
+</html>

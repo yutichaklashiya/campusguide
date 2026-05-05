@@ -1,0 +1,54 @@
+{% extends "main_app/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/history.css' %}">
+
+<main>
+  <h1>{% trans "CHARUSAT University - A Legacy of Education and Innovation" %}</h1>
+  <p>{% trans "A beacon of education and knowledge" %}</p>
+
+  <div class="cards">
+
+    <!-- LEFT CARD -->
+    <div class="card">
+      <h3>{% trans "Our Journey Through Time" %}</h3>
+
+      <div class="book">
+        <img src="{% static 'images/book.png' %}" alt="Book">
+      </div>
+
+      <ul>
+        <li>{% trans "Founded under Charotar Moti Sattavis Patidar Kelavani Mandal" %}</li>
+        <li>{% trans "Began in 2000 with the establishment of Charotar Institute of Technology (CITC) with only 240 students" %}</li>
+        <li>{% trans "Expanded gradually with institutes in Computer Applications, Pharmacy, Management, and Applied Sciences" %}</li>
+        <li>{% trans "Transformed into a full-fledged university in 2009 under Gujarat State Act" %}</li>
+        <li>{% trans "Today, a modern multidisciplinary campus offering 70+ programs across multiple faculties" %}</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="card" id="milestones">
+      <h3>{% trans "Key Milestones" %}</h3>
+
+      <div class="timeline">
+        <div class="event"><span>2000</span> {% trans "Establishment of first institute (CITC)" %}</div>
+        <div class="event"><span>2002-2007</span> {% trans "Expansion with institutes" %}</div>
+        <div class="event"><span>2009</span> {% trans "Granted University Status (CHARUSAT)" %}</div>
+        <div class="event"><span>2010+</span> {% trans "Entry into healthcare education (Physiotherapy & Nursing)" %}</div>
+        <div class="event"><span>Present</span> {% trans "NAAC A+ accredited, globally recognized university with strong research and innovation focus" %}</div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<!-- ROBOT -->
+<div class="robot" onclick="document.getElementById('milestones').scrollIntoView();">
+  <img src="{% static 'images/robot.png' %}" alt="Helper Robot">
+</div>
+
+{% endblock %}

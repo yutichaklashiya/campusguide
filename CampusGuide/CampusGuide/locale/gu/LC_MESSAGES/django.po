@@ -1,0 +1,718 @@
+# Gujarati translation for Campus Guide
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-28 13:56+0530\n"
+"PO-Revision-Date: 2026-03-28 11:50+0530\n"
+"Last-Translator: \n"
+"Language-Team: Gujarati\n"
+"Language: gu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\CampusGuide\settings.py:104
+msgid "English"
+msgstr "અંગ્રેજી"
+
+#: .\CampusGuide\settings.py:105
+msgid "Hindi"
+msgstr "હિન્દી"
+
+#: .\CampusGuide\settings.py:106
+msgid "Gujarati"
+msgstr "ગુજરાતી"
+
+#: .\main_app\admin.py:24
+msgid "Campus Guide Administration"
+msgstr "કેમ્પસ માર્ગદર્શિકા વહીવટ"
+
+#: .\main_app\admin.py:25
+msgid "Campus Guide Admin Portal"
+msgstr "કેમ્પસ માર્ગદર્શિકા એડમિન પોર્ટલ"
+
+#: .\main_app\admin.py:26
+msgid "Welcome to Campus Guide Admin"
+msgstr "કેમ્પસ માર્ગદર્શિકા એડમિનમાં આપનું સ્વાગત છે"
+
+#: .\main_app\models.py:10 .\main_app\models.py:31 .\main_app\models.py:60
+#: .\main_app\templates\main_app\admin_dashboard.html:132
+msgid "User"
+msgstr "વપરાશકર્તા"
+
+#: .\main_app\models.py:12
+msgid "OTP"
+msgstr "ઓટીપી"
+
+#: .\main_app\models.py:14
+msgid "Is Verified"
+msgstr "ચકાસાયેલ છે"
+
+#: .\main_app\models.py:16 .\main_app\models.py:41 .\main_app\models.py:64
+msgid "Created At"
+msgstr "બનાવેલ સમય"
+
+#: .\main_app\models.py:19
+msgid "Email OTP"
+msgstr "ઇમેઇલ ઓટીપી"
+
+#: .\main_app\models.py:20
+msgid "Email OTPs"
+msgstr "ઇમેઇલ ઓટીપી"
+
+#: .\main_app\models.py:33
+msgid "Name"
+msgstr "નામ"
+
+#: .\main_app\models.py:35
+msgid "Email"
+msgstr "ઇમેઇલ"
+
+#: .\main_app\models.py:37
+msgid "Rating"
+msgstr "રેટિંગ"
+
+#: .\main_app\models.py:39
+msgid "Message"
+msgstr "સંદેશ"
+
+#: .\main_app\models.py:45
+msgid "Feedback"
+msgstr "પ્રતિસાદ"
+
+#: .\main_app\models.py:46
+msgid "Feedbacks"
+msgstr "પ્રતિસાદો"
+
+#: .\main_app\models.py:61 .\main_app\templates\main_app\admin_languse.html:127
+msgid "Question"
+msgstr "પ્રશ્ન"
+
+#: .\main_app\models.py:62
+msgid "Response"
+msgstr "જવાબ"
+
+#: .\main_app\models.py:63
+#: .\main_app\templates\main_app\admin_dashboard.html:134
+#: .\main_app\templates\main_app\admin_languse.html:128
+#: .\main_app\templates\main_app\admin_userquery.html:98
+msgid "Language"
+msgstr "ભાષા"
+
+#: .\main_app\models.py:67
+msgid "Query Log"
+msgstr "ક્વેરી લોગ"
+
+#: .\main_app\models.py:68
+msgid "Query Logs"
+msgstr "ક્વેરી લોગ"
+
+#: .\main_app\templates\main_app\aboutclg.html:13
+msgid "About"
+msgstr "વિશે"
+
+#: .\main_app\templates\main_app\aboutclg.html:13
+msgid "CHARUSAT"
+msgstr "ચારુસેટ"
+
+#: .\main_app\templates\main_app\aboutclg.html:19
+msgid "Our History"
+msgstr "અમારો ઇતિહાસ"
+
+#: .\main_app\templates\main_app\aboutclg.html:20
+msgid "Founded in 2000, our college has a legacy of excellence in education."
+msgstr "2000 માં સ્થપાયેલ, અમારી કોલેજ શિક્ષણમાં શ્રેષ્ઠતાનો વારસો ધરાવે છે."
+
+#: .\main_app\templates\main_app\aboutclg.html:29
+#: .\main_app\templates\main_app\acadamicdepartment.html:10
+msgid "Academic Departments"
+msgstr "શૈક્ષણિક વિભાગો"
+
+#: .\main_app\templates\main_app\aboutclg.html:30
+msgid "Science, Commerce, IT, Management and more."
+msgstr "વિજ્ઞાન, વાણિજ્ય, આઈટી, મેનેજમેન્ટ અને વધુ."
+
+#: .\main_app\templates\main_app\aboutclg.html:39
+msgid "Infrastructure"
+msgstr "માળખાગત સુવિધાઓ"
+
+#: .\main_app\templates\main_app\aboutclg.html:40
+msgid "Modern labs, digital library, and smart classrooms."
+msgstr "આધુનિક પ્રયોગશાળાઓ, ડિજિટલ લાઇબ્રેરી અને સ્માર્ટ ક્લાસરૂમ્સ."
+
+#: .\main_app\templates\main_app\aboutclg.html:49
+#: .\main_app\templates\main_app\achievements.html:12
+msgid "Achievements"
+msgstr "સિદ્ધિઓ"
+
+#: .\main_app\templates\main_app\aboutclg.html:50
+msgid "NAAC A+."
+msgstr "નૈક એ+."
+
+#: .\main_app\templates\main_app\aboutclg.html:61
+msgid "Learn more about us!"
+msgstr "અમારા વિશે વધુ જાણો!"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:11
+msgid "Charusat University – Faculties & Departments"
+msgstr "ચારુસેટ યુનિવર્સિટી - ફેકલ્ટી અને વિભાગો"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:19
+msgid ""
+"CMPICA – Smt. Chandaben Mohanbhai Patel Institute of Computer Applications"
+msgstr "સીએમપીઆઈસીએ - શ્રીમતી ચંદાબેન મોહનભાઈ પટેલ ઇન્સ્ટિટ્યૂટ ઓફ કોમ્પ્યુટર એપ્લિકેશન્સ"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:31
+msgid "CSPIT – Chandubhai S Patel Institute of Technology"
+msgstr "સીએસપીઆઈટી - ચંદુભાઈ એસ પટેલ ઇન્સ્ટિટ્યૂટ ઓફ ટેકનોલોજી"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:46
+msgid "DEPSTAR – Devang Patel Institute of Advanced Technology & Research"
+msgstr "ડેપસ્ટાર - દેવાંગ પટેલ ઇન્સ્ટિટ્યૂટ ઓફ એડવાન્સ્ડ ટેકનોલોજી એન્ડ રિસર્ચ"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:58
+msgid "IIIM – Indukaka Ipcowala Institute of Management"
+msgstr "આઈઆઈઆઈએમ - ઈન્દુકાકા ઈપકોવાલા ઇન્સ્ટિટ્યૂટ ઓફ મેનેજમેન્ટ"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:68
+msgid "RPCP – Ramanbhai Patel College of Pharmacy"
+msgstr "આરપીસીપી - રમણભાઈ પટેલ કોલેજ ઓફ ફાર્મસી"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:78
+msgid "PDPIAS – P. D. Patel Institute of Applied Sciences"
+msgstr "પીડીપીઆઈએસ - પી. ડી. પટેલ ઇન્સ્ટિટ્યૂટ ઓફ એપ્લાઇડ સાયન્સ"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:94
+msgid "MTIN – Manikaka Topawala Institute of Nursing"
+msgstr "એમટીઆઈએન - મણિકાકા ટોપાવાલા ઇન્સ્ટિટ્યૂટ ઓફ નર્સિંગ"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:106
+msgid "BDIPS – Bapubhai Desaibhai Patel Institute of Paramedical Sciences"
+msgstr "બીડીઆઈપીએસ - બાપુભાઈ દેસાઈભાઈ પટેલ ઇન્સ્ટિટ્યૂટ ઓફ પેરામેડિકલ સાયન્સ"
+
+#: .\main_app\templates\main_app\acadamicdepartment.html:119
+msgid "ARIP – Ashok & Rita Patel Institute of Physiotherapy"
+msgstr "એઆરઆઈપી - અશોક અને રીટા પટેલ ઇન્સ્ટિટ્યૂટ ઓફ ફિઝિયોથેરાપી"
+
+#: .\main_app\templates\main_app\achievements.html:16
+msgid "NAAC A+ Accredited University"
+msgstr "નૈક એ+ માન્યતા પ્રાપ્ત યુનિવર્સિટી"
+
+#: .\main_app\templates\main_app\achievements.html:21
+msgid "Institution of Happiness (IOH) Certificate by QS I-GAUGE"
+msgstr "ક્યુએસ આઈ-ગેજ દ્વારા ઇન્સ્ટિટ્યુશન ઓફ હેપીનેસ (IOH) પ્રમાણપત્ર"
+
+#: .\main_app\templates\main_app\achievements.html:26
+msgid "Ranked among Top 3 Universities in Gujarat by GSIRF"
+msgstr "GSIRF દ્વારા ગુજરાતની ટોચની 3 યુનિવર્સિટીઓમાં સ્થાન મેળવ્યું"
+
+#: .\main_app\templates\main_app\achievements.html:31
+msgid "Member of United Nations of Academic Impact"
+msgstr "સંયુક્ત રાષ્ટ્ર શૈક્ષણિક પ્રભાવના સભ્ય"
+
+#: .\main_app\templates\main_app\achievements.html:36
+msgid "Achieved Q2 Innovation Rank in 293rd IND SCIMAGO Institutions Rankings"
+msgstr "293મી IND SCIMAGO સંસ્થાઓના રેન્કિંગમાં Q2 ઇનોવેશન રેન્ક મેળવ્યો"
+
+#: .\main_app\templates\main_app\achievements.html:41
+msgid "Certified as Center of Excellence by Government of Gujarat"
+msgstr "ગુજરાત સરકાર દ્વારા સેન્ટર ઓફ એક્સેલન્સ તરીકે પ્રમાણિત"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:10
+msgid "Campus Guide | Admin Dashboard"
+msgstr "કેમ્પસ માર્ગદર્શિકા એડમિન પોર્ટલ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:26
+#: .\main_app\templates\main_app\admin_languse.html:24
+#: .\main_app\templates\main_app\admin_review.html:78
+#: .\main_app\templates\main_app\admin_userquery.html:22
+#: .\main_app\templates\main_app\search_analytics.html:26
+msgid "Admin Panel"
+msgstr "એડમિન પેનલ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:30
+#: .\main_app\templates\main_app\admin_languse.html:29
+#: .\main_app\templates\main_app\admin_review.html:83
+#: .\main_app\templates\main_app\admin_userquery.html:27
+#: .\main_app\templates\main_app\search_analytics.html:30
+msgid "Dashboard"
+msgstr "ડેશબોર્ડ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:32
+#: .\main_app\templates\main_app\admin_languse.html:33
+#: .\main_app\templates\main_app\admin_review.html:87
+#: .\main_app\templates\main_app\admin_userquery.html:31
+#: .\main_app\templates\main_app\search_analytics.html:32
+#: .\main_app\templates\main_app\search_analytics.html:56
+msgid "Search Analytics"
+msgstr "શોધ વિશ્લેષણ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:34
+#: .\main_app\templates\main_app\admin_languse.html:37
+#: .\main_app\templates\main_app\admin_review.html:91
+#: .\main_app\templates\main_app\admin_userquery.html:35
+#: .\main_app\templates\main_app\search_analytics.html:34
+
+
+msgid "Feedback & Reviews"
+msgstr "પ્રતિસાદ અને સમીક્ષાઓ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:36
+#: .\main_app\templates\main_app\admin_dashboard.html:105
+#: .\main_app\templates\main_app\admin_languse.html:41
+#: .\main_app\templates\main_app\admin_languse.html:96
+#: .\main_app\templates\main_app\admin_review.html:95
+#: .\main_app\templates\main_app\admin_userquery.html:39
+#: .\main_app\templates\main_app\search_analytics.html:36
+
+
+msgid "Language Usage"
+msgstr "ભાષાનો ઉપયોગ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:38
+#: .\main_app\templates\main_app\admin_languse.html:45
+#: .\main_app\templates\main_app\admin_review.html:99
+#: .\main_app\templates\main_app\admin_userquery.html:43
+#: .\main_app\templates\main_app\admin_userquery.html:83
+#: .\main_app\templates\main_app\search_analytics.html:38
+
+
+msgid "User Query Logs"
+msgstr "વપરાશકર્તા પ્રશ્ન લોગ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:56
+#: .\main_app\templates\main_app\admin_languse.html:64
+#: .\main_app\templates\main_app\admin_review.html:118
+#: .\main_app\templates\main_app\admin_userquery.html:61
+msgid "Admin Dashboard"
+msgstr "એડમિન ડેશબોર્ડ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:62
+#: .\main_app\templates\main_app\admin_languse.html:70
+#: .\main_app\templates\main_app\admin_review.html:124
+#: .\main_app\templates\main_app\admin_userquery.html:65
+#: .\main_app\templates\main_app\search_analytics.html:62
+msgid "Welcome"
+msgstr "સ્વાગત છે"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:72
+#: .\main_app\templates\main_app\admin_languse.html:80
+#: .\main_app\templates\main_app\admin_review.html:134
+#: .\main_app\templates\main_app\admin_userquery.html:75
+#: .\main_app\templates\main_app\search_analytics.html:72
+msgid "Logout"
+msgstr "લોગઆઉટ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:83
+msgid "Total Queries"
+msgstr "કુલ પ્રશ્નો"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:88
+
+
+msgid "Positive Feedback"
+msgstr "હકારાત્મક પ્રતિસાદ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:93
+msgid "Total Users"
+msgstr "કુલ વપરાશકર્તાઓ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:113
+msgid "Most Searched Topics"
+msgstr "સૌથી વધુ શોધાયેલ વિષયો"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:127
+#: .\main_app\templates\main_app\admin_languse.html:120
+msgid "Recent Queries"
+msgstr "તાજેતરના પ્રશ્નો"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:133
+
+
+msgid "Query"
+msgstr "પ્રશ્ન"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:135
+#: .\main_app\templates\main_app\admin_languse.html:129
+msgid "Date"
+msgstr "તારીખ"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:155
+#: .\main_app\templates\main_app\admin_languse.html:150
+msgid "No queries yet"
+msgstr "હજી સુધી કોઈ પ્રશ્નો નથી"
+
+#: .\main_app\templates\main_app\admin_dashboard.html:166
+
+
+msgid "Feedback Summary"
+msgstr "પ્રતિસાદ સારાંશ"
+
+#: .\main_app\templates\main_app\admin_languse.html:8
+
+
+msgid "Campus Guide | Language Usage"
+msgstr "કેમ્પસ માર્ગદર્શિકા | ભાષા વપરાશ"
+
+#: .\main_app\templates\main_app\admin_languse.html:87
+msgid "Language Usage Analytics"
+msgstr "ભાષા વપરાશ વિશ્લેષણ"
+
+#: .\main_app\templates\main_app\admin_languse.html:107
+msgid "Category Search Count"
+msgstr "કેટેગરી શોધ ગણતરી"
+
+#: .\main_app\templates\main_app\admin_login.html:8
+
+
+msgid "Campus Guide - Admin Login"
+msgstr "કેમ્પસ માર્ગદર્શિકા - એડમિન લોગિન"
+
+#: .\main_app\templates\main_app\admin_login.html:21
+#: .\main_app\templates\main_app\base.html:36
+#: .\main_app\templates\main_app\login.html:18
+#: .\main_app\templates\main_app\signup.html:18
+msgid "Campus"
+msgstr "કેમ્પસ"
+
+#: .\main_app\templates\main_app\admin_login.html:21
+#: .\main_app\templates\main_app\base.html:36
+#: .\main_app\templates\main_app\login.html:18
+#: .\main_app\templates\main_app\signup.html:18
+msgid "Guide"
+msgstr "માર્ગદર્શિકા"
+
+#: .\main_app\templates\main_app\admin_login.html:44
+
+
+msgid "Admin Login"
+msgstr "એડમિન લોગિન"
+
+#: .\main_app\templates\main_app\admin_login.html:45
+
+
+msgid "Login as Admin to continue"
+msgstr "આગળ વધવા માટે એડમિન તરીકે લોગિન કરો"
+
+#: .\main_app\templates\main_app\admin_login.html:53
+#: .\main_app\templates\main_app\login.html:32
+#: .\main_app\templates\main_app\signup.html:36
+msgid "Username"
+msgstr "વપરાશકર્તા નામ"
+
+#: .\main_app\templates\main_app\admin_login.html:56
+#: .\main_app\templates\main_app\login.html:33
+#: .\main_app\templates\main_app\signup.html:38
+msgid "Password"
+msgstr "પાસવર્ડ"
+
+#: .\main_app\templates\main_app\admin_login.html:59
+#: .\main_app\templates\main_app\login.html:35
+msgid "Forgot password?"
+msgstr "પાસવર્ડ ભૂલી ગયા છો?"
+
+#: .\main_app\templates\main_app\admin_login.html:62
+#: .\main_app\templates\main_app\login.html:29
+#: .\main_app\templates\main_app\login.html:37
+#: .\main_app\templates\main_app\signup.html:45
+msgid "Login"
+msgstr "લોગિન"
+
+#: .\main_app\templates\main_app\admin_review.html:7
+#: .\main_app\templates\main_app\admin_review.html:141
+msgid "Review & Feedback Analysis"
+msgstr "સમીક્ષા અને પ્રતિસાદ વિશ્લેષણ"
+
+#: .\main_app\templates\main_app\admin_review.html:150
+
+
+msgid "Average Rating"
+msgstr "સરેરાશ રેટિંગ"
+
+#: .\main_app\templates\main_app\admin_review.html:164
+
+
+msgid "Total Feedback"
+msgstr "કુલ પ્રતિસાદ"
+
+#: .\main_app\templates\main_app\admin_review.html:173
+
+
+msgid "Feedback Sentiment"
+msgstr "પ્રતિસાદ સેન્ટિમેન્ટ"
+
+#: .\main_app\templates\main_app\admin_review.html:175
+msgid "Positive"
+msgstr "હકારાત્મક"
+
+#: .\main_app\templates\main_app\admin_review.html:181
+msgid "Negative"
+msgstr "નકારાત્મક"
+
+#: .\main_app\templates\main_app\admin_review.html:196
+msgid "Recent Reviews"
+msgstr "તાજેતરની સમીક્ષાઓ"
+
+#: .\main_app\templates\main_app\admin_review.html:212
+msgid "No reviews yet"
+msgstr "હજી સુધી કોઈ સમીક્ષાઓ નથી"
+
+#: .\main_app\templates\main_app\admin_userquery.html:8
+
+
+msgid "Campus Guide | User Query Logs"
+msgstr "કેમ્પસ માર્ગદર્શિકા | વપરાશકર્તા પ્રશ્ન લોગ"
+
+#: .\main_app\templates\main_app\admin_userquery.html:95
+msgid "Timestamp"
+msgstr "સમયરેખા"
+
+#: .\main_app\templates\main_app\admin_userquery.html:96
+
+
+msgid "User Question"
+msgstr "વપરાશકર્તા પ્રશ્ન"
+
+#: .\main_app\templates\main_app\admin_userquery.html:97
+
+
+msgid "Bot Response"
+msgstr "બોટ જવાબ"
+
+#: .\main_app\templates\main_app\admin_userquery.html:129
+
+
+msgid "No Query Logs Available"
+msgstr "કોઈ પ્રશ્ન લોગ ઉપલબ્ધ નથી"
+
+#: .\main_app\templates\main_app\base.html:9
+msgid "Campus Guide"
+msgstr "કેમ્પસ માર્ગદર્શિકા"
+
+#: .\main_app\templates\main_app\base.html:41
+msgid "About College"
+msgstr "કોલેજ વિશે"
+
+#: .\main_app\templates\main_app\base.html:42
+msgid "Contact"
+msgstr "સંપર્ક"
+
+msgid "Admission"
+msgstr "પ્રવેશ"
+
+msgid "Placement"
+msgstr "પ્લેસમેન્ટ"
+
+msgid "Fees"
+msgstr "ફી"
+
+msgid "Hostel"
+msgstr "હોસ્ટેલ"
+
+msgid "Library"
+msgstr "પુસ્તકાલય"
+
+msgid "Canteen"
+msgstr "કેન્ટીન"
+
+msgid "Events"
+msgstr "કાર્યક્રમો"
+
+msgid "Sports"
+msgstr "રમતગમત"
+
+msgid "Other"
+msgstr "અન્ય"
+
+#: .\main_app\templates\main_app\chat.html:17
+msgid "Hi! I'm your virtual Campus Guide. How can I assist you today?"
+msgstr "નમસ્તે! હું તમારો વર્ચ્યુઅલ કેમ્પસ ગાઈડ છું. હું આજે તમને કેવી રીતે મદદ કરી શકું?"
+
+#: .\main_app\templates\main_app\chat.html:23
+msgid "Type your message..."
+msgstr "તમારો સંદેશ ટાઇપ કરો..."
+
+#: .\main_app\templates\main_app\chat.html:25
+msgid "End Chat"
+msgstr "ચેટ સમાપ્ત કરો"
+
+#: .\main_app\templates\main_app\contact.html:14
+msgid "Contact Us"
+msgstr "સંપર્ક કરો"
+
+#: .\main_app\templates\main_app\contact.html:17
+msgid "Our Address"
+msgstr "અમારું સરનામું"
+
+#: .\main_app\templates\main_app\contact.html:18
+msgid ""
+"CHARUSAT Campus, 139, Highway, off Nadiad–Petlad Road, Changa, Gujarat 388421"
+msgstr "ચારુસેટ કેમ્પસ, 139, હાઇવે, નડિયાદ-પેટલાદ રોડ પાસે, ચાંગા, ગુજરાત 388421"
+
+#: .\main_app\templates\main_app\contact.html:21
+msgid "Phone Number(s)"
+msgstr "ફોન નંબર"
+
+#: .\main_app\templates\main_app\contact.html:25
+msgid "Email Address(s)"
+msgstr "ઇમેઇલ સરનામું"
+
+#: .\main_app\templates\main_app\contact.html:37
+msgid "Message sent successfully!"
+msgstr "સંદેશ સફળતાપૂર્વક મોકલવામાં આવ્યો!"
+
+#: .\main_app\templates\main_app\contact.html:41
+msgid "Your Name"
+msgstr "તમારું નામ"
+
+#: .\main_app\templates\main_app\contact.html:43
+msgid "Your Message"
+msgstr "તમારો સંદેશ"
+
+#: .\main_app\templates\main_app\contact.html:45
+msgid "Send Message"
+msgstr "સંદેશ મોકલો"
+
+#: .\main_app\templates\main_app\feedback.html:14
+msgid "Share Your Experience"
+msgstr "તમારો અનુભવ શેર કરો"
+
+#: .\main_app\templates\main_app\feedback.html:15
+msgid "How would you rate your chat experience today?"
+msgstr "આજે તમે તમારા ચેટ અનુભવને કેવી રીતે રેટ કરશો?"
+
+#: .\main_app\templates\main_app\feedback.html:20
+msgid "Share your feedback..."
+msgstr "તમારી પ્રતિક્રિયા શેર કરો..."
+
+#: .\main_app\templates\main_app\feedback.html:21
+msgid "Submit Feedback"
+msgstr "પ્રતિસાદ સબમિટ કરો"
+
+#: .\main_app\templates\main_app\feedback.html:29
+msgid "Your feedback helps us improve!"
+msgstr "તમારો પ્રતિસાદ અમને સુધારવામાં મદદ કરે છે!"
+
+#: .\main_app\templates\main_app\history.html:10
+msgid "CHARUSAT University - A Legacy of Education and Innovation"
+msgstr "ચારુસેટ યુનિવર્સિટી - શિક્ષણ અને નવીનતાનો વારસો"
+
+#: .\main_app\templates\main_app\history.html:11
+msgid "A beacon of education and knowledge"
+msgstr "શિક્ષણ અને જ્ઞાનનું દીવાદાંડી"
+
+#: .\main_app\templates\main_app\history.html:17
+msgid "Our Journey Through Time"
+msgstr "સમય સાથેની અમારી સફર"
+
+#: .\main_app\templates\main_app\history.html:24
+msgid "Founded by Charutar Vidya Mandal"
+msgstr "ચારુતર વિદ્યા મંડળ દ્વારા સ્થાપિત"
+
+#: .\main_app\templates\main_app\history.html:25
+msgid "Started with Engineering & Pharmacy"
+msgstr "એન્જિનિયરિંગ અને ફાર્મસી સાથે શરૂઆત કરી"
+
+#: .\main_app\templates\main_app\history.html:26
+msgid "Modern multidisciplinary campus"
+msgstr "આધુનિક બહુશાખાકીય કેમ્પસ"
+
+#: .\main_app\templates\main_app\history.html:32
+msgid "Key Milestones"
+msgstr "મુખ્ય સીમાચિહ્નો"
+
+#: .\main_app\templates\main_app\history.html:35
+msgid "Establishment"
+msgstr "સ્થાપના"
+
+#: .\main_app\templates\main_app\history.html:36
+msgid "First Engineering College"
+msgstr "પ્રથમ એન્જિનિયરિંગ કોલેજ"
+
+#: .\main_app\templates\main_app\history.html:37
+msgid "University Status"
+msgstr "યુનિવર્સિટીનો દરજ્જો"
+
+#: .\main_app\templates\main_app\history.html:38
+msgid "Global Collaborations"
+msgstr "વૈશ્વિક સહયોગ"
+
+#: .\main_app\templates\main_app\home.html:8
+msgid "YOUR PERSONAL"
+msgstr "તમારી વ્યક્તિગત"
+
+#: .\main_app\templates\main_app\home.html:8
+msgid "CAMPUS ASSISTANT"
+msgstr "કેમ્પસ સહાયક"
+
+#: .\main_app\templates\main_app\home.html:11
+msgid ""
+"Get instant answers, explore courses, and navigate campus life with ease."
+msgstr ""
+"ત્વરિત જવાબો મેળવો, અભ્યાસક્રમોનું અન્વેષણ કરો અને કેમ્પસ જીવનને સરળતાથી નેવિગેટ કરો."
+
+#: .\main_app\templates\main_app\home.html:15
+msgid "Chat now"
+msgstr "હમણાં ચેટ કરો"
+
+#: .\main_app\templates\main_app\login.html:7
+msgid "Campus Guide - Login"
+msgstr "કેમ્પસ માર્ગદર્શિકા - લોગિન"
+
+#: .\main_app\templates\main_app\login.html:30
+msgid "Login to continue"
+msgstr "આગળ વધવા માટે લોગિન કરો"
+
+#: .\main_app\templates\main_app\login.html:43
+msgid "Don’t have an account?"
+msgstr "ખાતું નથી?"
+
+#: .\main_app\templates\main_app\login.html:44
+#: .\main_app\templates\main_app\signup.html:29
+#: .\main_app\templates\main_app\signup.html:41
+msgid "Sign up"
+msgstr "સાઇન અપ કરો"
+
+#: .\main_app\templates\main_app\search_analytics.html:11
+
+
+msgid "Campus Guide | Search Analytics"
+msgstr "કેમ્પસ માર્ગદર્શિકા | શોધ વિશ્લેષણ"
+
+#: .\main_app\templates\main_app\search_analytics.html:86
+msgid "Top Searched Keywords"
+msgstr "ટોચના શોધાયેલ કીવર્ડ્સ"
+
+#: .\main_app\templates\main_app\search_analytics.html:96
+msgid "Category-wise Search Count"
+msgstr "કેટેગરી મુજબ શોધ ગણતરી"
+
+#: .\main_app\templates\main_app\search_analytics.html:106
+msgid "Date-wise Search Trend"
+msgstr "તારીખ મુજબ શોધ વલણ"
+
+#: .\main_app\templates\main_app\search_analytics.html:116
+msgid "Campus Life Search Trend"
+msgstr "કેમ્પસ લાઈફ સર્ચ ટ્રેન્ડ"
+
+#: .\main_app\templates\main_app\signup.html:7
+msgid "Campus Guide - Sign Up"
+msgstr "કેમ્પસ માર્ગદર્શિકા - સાઇન અપ કરો"
+
+#: .\main_app\templates\main_app\signup.html:30
+msgid "Sign up to continue"
+msgstr "આગળ વધવા માટે સાઇન અપ કરો"
+
+#: .\main_app\templates\main_app\signup.html:37
+msgid "Email Id"
+msgstr "ઇમેઇલ આઈડી"
+
+#: .\main_app\templates\main_app\signup.html:39
+msgid "Confirm password"
+msgstr "પાસવર્ડની પુષ્ટિ કરો"
+
+#: .\main_app\templates\main_app\signup.html:44
+msgid "Already have an account?"
+msgstr "પહેલેથી જ ખાતું છે?"

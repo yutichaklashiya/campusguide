@@ -1,0 +1,58 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% trans "Campus Guide - Sign Up" %}</title>
+
+  <!-- DJANGO STATIC CSS -->
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+    <span class="title">
+      {% trans "Campus" %}<span>{% trans "Guide" %}</span>
+    </span>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <!-- SIGN UP FORM -->
+    <form class="login-form" method="post">
+      {% csrf_token %}
+
+      <h2>{% trans "Sign up" %}</h2>
+      <p>{% trans "Sign up to continue" %}</p>
+
+      {% if error %}
+        <p style="color:red; margin-bottom:10px;">{{ error }}</p>
+      {% endif %}
+
+      <input type="text" name="full_name" placeholder="{% trans "Full Name" %}" required>
+      <input type="text" name="username" placeholder="{% trans "Username" %}" required>
+      <input type="email" name="email" placeholder="{% trans "Email Id" %}" required>
+      <input type="password" name="password" placeholder="{% trans "Password" %}" required>
+      <input type="password" name="confirm_password" placeholder="{% trans "Confirm password" %}" required>
+
+      <button type="submit" class="btn-submit">{% trans "Sign up" %}</button>
+      
+      <span class="link">
+        {% trans "Already have an account?" %}
+        <a href="{% url 'login' %}">{% trans "Login" %}</a>
+      </span>
+    </form>
+
+    <!-- ROBOT IMAGE -->
+    <div class="robot">
+      <img src="{% static 'images/back2.jpeg' %}" alt="Robot">
+    </div>
+
+  </div>
+
+</body>
+</html>

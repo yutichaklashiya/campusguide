@@ -1,0 +1,46 @@
+{% extends "main_app/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/achievements.css' %}">
+
+<div class="container">
+
+    <!-- LEFT CONTENT -->
+    <div class="left">
+        <h1>{% trans "Achievements" %}</h1>
+
+         <div class="achievement-item">
+            <div class="icon a"><img src="https://www.charusat.ac.in/_next/static/media/02.d18d13e1.jpg" height="50px" width="50px"></div>
+            <p>{% trans "NAAC A+ Accredited University" %}</p>
+        </div>
+
+        <div class="achievement-item">
+            <div class="icon b"><img src="https://www.charusat.ac.in/_next/static/media/01.734a1c87.jpg" height="50px" width="50px"></div>
+            <p>{% trans "Institution of Happiness (IOH) Certificate by QS I-GAUGE" %}</p>
+        </div>
+
+        <div class="achievement-item">
+            <div class="icon c"><img src="https://www.charusat.ac.in/_next/static/media/02.d18d13e1.jpg" height="50px" width="50px"></div>
+            <p>{% trans "Ranked among Top 3 Universities in Gujarat by GSIRF" %}</p>
+        </div>
+
+        <div class="achievement-item">
+            <div class="icon yellow"><img src="https://www.charusat.ac.in/_next/static/media/03.bdc3cd52.jpg" height="50px" width="50px"></div>
+            <p>{% trans "Member of United Nations of Academic Impact" %}</p>
+        </div>
+
+        <div class="achievement-item">
+            <div class="icon blue"><img src="https://www.charusat.ac.in/_next/static/media/02.d18d13e1.jpg" height="50px" width="50px"></div>
+            <p>{% trans "Achieved Q2 Innovation Rank in 293rd IND SCIMAGO Institutions Rankings" %}</p>
+        </div>
+
+        <div class="achievement-item">
+            <div class="icon yellow"><img src="https://www.charusat.ac.in/_next/static/media/03.bdc3cd52.jpg" height="50px" width="50px"></div>
+            <p>{% trans "Certified as Center of Excellence by Government of Gujarat" %}</p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,150 @@
+/* ===== GLOBAL ===== */
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f3f7fc;
+    top: 0 !important;
+    position: static !important;
+}
+
+/* ===== GOOGLE TRANSLATE FIX ===== */
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body>.skiptranslate {
+    display: none !important;
+}
+
+/* ===== WRAPPER ===== */
+
+.feedback-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 60px;
+    gap: 50px;
+    /* Space between card and image */
+    flex-wrap: wrap;
+    /* Responsive wrap */
+}
+
+/* ===== CARD ===== */
+
+.feedback-card {
+    width: 450px;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* ===== TITLE ===== */
+
+.feedback-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* ===== STARS ===== */
+
+.stars {
+    display: flex;
+    gap: 6px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.stars span {
+    color: #ccc;
+    transition: 0.25s;
+}
+
+.stars.red span.active {
+    color: #e53935;
+}
+
+.stars.orange span.active {
+    color: #fb8c00;
+}
+
+.stars.green span.active {
+    color: #43a047;
+}
+
+/* ===== TEXTAREA ===== */
+
+textarea {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+/* ===== BUTTON ===== */
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1976d2;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1565c0;
+}
+
+/* ===== ROBOT IMAGE ===== */
+
+.img {
+    width: 250px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ===== FOOTER TEXT ===== */
+
+.footer-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 0;
+    font-size: 13px;
+    color: #555;
+}

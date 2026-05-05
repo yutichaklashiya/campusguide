@@ -1,0 +1,235 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>{% trans "Campus Guide | Language Usage" %}</title>
+
+<link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+
+<style>
+  /* Simple Hover Effect for all cards on the page */
+  .chart-box, .table-box {
+    transition: all 0.3s ease;
+  }
+
+  .chart-box:hover, .table-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h2>{% trans "Admin Panel" %}</h2>
+
+<ul>
+
+<li>
+<a href="{% url 'admin_dashboard' %}">{% trans "Dashboard" %}</a>
+</li>
+
+<li>
+<a href="{% url 'search_analytics' %}">{% trans "Search Analytics" %}</a>
+</li>
+
+<li>
+<a href="{% url 'admin_review' %}">{% trans "Feedback & Reviews" %}</a>
+</li>
+
+<li class="active">
+<a href="{% url 'admin_languse' %}">{% trans "Language Usage" %}</a>
+</li>
+
+<li>
+<a href="{% url 'admin_userquery' %}">{% trans "User Query Logs" %}</a>
+</li>
+
+</ul>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div class="topbar-left">
+
+<img src="{% static 'images/logo.jpg' %}">
+<h1 class="dash-title">{% trans "Admin Dashboard" %}</h1>
+
+</div>
+
+<div class="topbar-right">
+
+<span class="welcome">{% trans "Welcome" %}, {{ request.user.username }}</span>
+
+<a href="{% url 'login' %}" class="top-logout">{% trans "Logout" %}</a>
+
+</div>
+
+</div>
+
+
+<h2 style="margin-bottom:20px;">{% trans "Language Usage Analytics" %}</h2>
+
+
+<div class="charts">
+
+<!-- LANGUAGE CHART -->
+
+<div class="chart-box">
+
+<h3>{% trans "Language Usage" %}</h3>
+
+<canvas id="languageChart"></canvas>
+
+</div>
+
+
+<!-- CATEGORY CHART -->
+
+<div class="chart-box">
+
+<h3>{% trans "Category Search Count" %}</h3>
+
+<canvas id="categoryChart"></canvas>
+
+</div>
+
+</div>
+
+
+<!-- RECENT QUERIES -->
+
+<div class="table-box" style="margin-top:25px">
+
+<h3>{% trans "Recent Queries" %}</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>{% trans "Question" %}</th>
+<th>{% trans "Language" %}</th>
+<th>{% trans "Date" %}</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+{% for q in recent_queries %}
+
+<tr>
+
+<td>{{ q.question }}</td>
+<td>{{ q.language }}</td>
+<td>{{ q.created_at|date:"d M Y H:i" }}</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+<td colspan="3">{% trans "No queries yet" %}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LANGUAGE CHART -->
+
+<script>
+
+new Chart(document.getElementById('languageChart'),{
+
+type:'bar',
+
+data:{
+labels: {{ languages|safe }},
+datasets:[{
+label:'Language Usage',
+data: {{ counts|safe }},
+backgroundColor:'#3498db',
+borderRadius: 10
+}]
+},
+
+options:{
+responsive:true,
+animation: {
+    duration: 2000,
+    easing: 'easeOutQuart'
+},
+scales:{y:{beginAtZero:true}}
+}
+
+});
+
+</script>
+
+
+<!-- CATEGORY CHART -->
+
+<script>
+
+new Chart(document.getElementById('categoryChart'),{
+
+type:'bar',
+
+data:{
+labels: {{ categories|safe }},
+datasets:[{
+label:'Category Search',
+data: {{ cat_counts|safe }},
+backgroundColor:'#2ecc71',
+borderRadius: 10
+}]
+},
+
+options:{
+responsive:true,
+animation: {
+    duration: 2500,
+    easing: 'easeOutBack'
+},
+scales:{y:{beginAtZero:true}}
+}
+
+});
+
+</script>
+
+</body>
+</html>

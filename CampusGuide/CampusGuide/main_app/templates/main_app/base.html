@@ -1,0 +1,247 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>{% trans "Campus Guide" %}</title>
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<style>
+.top-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  z-index:1000;
+  padding: 12px 24px;
+}
+
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.header-right a,
+.header-right select {
+  font-size:14px;
+}
+
+/* Language dropdown style */
+.lang-select{
+  padding:6px 10px;
+  border-radius:5px;
+  cursor:pointer;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.auth-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 16px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.login-button {
+  background:#1976d2;
+  color:#ffffff !important;
+  font-weight: 700;
+}
+
+.signup-button {
+  background:#ffffff;
+  color:#1976d2 !important;
+  border: 1px solid #1976d2;
+}
+
+.signup-button:hover {
+  background: rgba(25, 118, 210, 0.08);
+}
+
+.logout-button {
+  background:#1976d2;
+  color:#fff;
+}
+
+/* User Profile Avatar */
+.user-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #1976d2;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 16px;
+  user-select: none;
+}
+
+.profile-menu {
+  position: relative;
+}
+
+.user-profile-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.user-profile-pill .user-name {
+  color: #1f2937;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 240px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  padding: 12px;
+  display: none;
+  z-index: 1000;
+}
+
+.profile-menu:hover .profile-dropdown,
+.profile-menu:focus-within .profile-dropdown {
+  display: block;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.profile-info .profile-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1976d2;
+  color: #fff;
+  font-weight: 700;
+}
+
+.profile-fullname {
+  font-weight: 700;
+  color: #111827;
+}
+
+.profile-email {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.logout-link {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #1976d2;
+  color: #ffffff !important;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logout-link:hover {
+  background: #1976d2;
+  color: #ffffff !important;
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="top-header">
+
+<div class="header-left">
+<img src="{% static 'images/logo.jpg' %}" alt="Campus Guide Logo">
+<h1>{% trans "Campus" %}<span>{% trans "Guide" %}</span></h1>
+</div>
+
+<div class="header-right">
+
+{% if '/about/' in request.path %}
+  <a href="{% url 'home' %}">{% trans "Home" %}</a>
+{% else %}
+  <a href="{% url 'about' %}">{% trans "About College" %}</a>
+{% endif %}
+{% if '/contact/' in request.path %}
+  <a href="{% url 'home' %}">{% trans "Home" %}</a>
+{% else %}
+  <a href="{% url 'contact' %}">{% trans "Contact" %}</a>
+{% endif %}
+
+<select name="language" class="lang-select" onchange="location.href='/' + this.value + '{{ request.path|slice:'3:' }}'">
+  {% get_current_language as CURRENT_LANG %}
+  <option value="en" {% if CURRENT_LANG == 'en' %}selected{% endif %}>English</option>
+  <option value="hi" {% if CURRENT_LANG == 'hi' %}selected{% endif %}>Hindi</option>
+  <option value="gu" {% if CURRENT_LANG == 'gu' %}selected{% endif %}>Gujarati</option>
+</select>
+
+{% if request.user.is_authenticated %}
+  <div class="profile-menu" tabindex="0">
+    <div class="user-profile-pill">
+      <div class="user-avatar" title="{{ request.user.get_full_name|default:request.user.username }}">
+        {{ request.user.get_full_name|default:request.user.username|slice:":1"|upper }}
+      </div>
+    </div>
+    <div class="profile-dropdown">
+      <div class="profile-info">
+        <div class="profile-avatar">
+          {{ request.user.get_full_name|default:request.user.username|slice:":1"|upper }}
+        </div>
+        <div>
+          <div class="profile-fullname">{{ request.user.get_full_name|default:request.user.username }}</div>
+          <div class="profile-email">{{ request.user.email }}</div>
+        </div>
+      </div>
+      <a href="{% url 'logout' %}" class="logout-link">{% trans "Logout" %}</a>
+    </div>
+  </div>
+{% else %}
+  <a href="{% url 'login' %}" class="auth-button login-button">{% trans "Login" %}</a>
+  <a href="{% url 'signup' %}" class="auth-button signup-button">{% trans "Sign up" %}</a>
+{% endif %}
+
+</div>
+
+</header>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

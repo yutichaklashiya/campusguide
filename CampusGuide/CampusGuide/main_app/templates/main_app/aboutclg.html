@@ -1,0 +1,110 @@
+{% extends "main_app/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+  {% get_current_language as CURRENT_LANG %}
+  <link rel="stylesheet" href="{% static 'css/aboutclg.css' %}">
+
+  <div class="container">
+
+    <!-- LEFT CONTENT -->
+    <div class="left">
+      <h1>
+        {% if CURRENT_LANG == 'gu' %}
+          વિશે <span>CHARUSAT</span>
+        {% elif CURRENT_LANG == 'hi' %}
+          <span>CHARUSAT</span> के बारे में
+        {% else %}
+          About <span>CHARUSAT</span>
+        {% endif %}
+      </h1>
+
+      <div class="card">
+        <div class="icon">📜</div>
+        <div>
+          <a href="{% url 'history' %}">
+            <h3>
+              {% if CURRENT_LANG == 'gu' %}અમારો ઇતિહાસ{% elif CURRENT_LANG == 'hi' %}हमारा इतिहास{% else %}Our History{% endif %}
+            </h3>
+            <p>
+              {% if CURRENT_LANG == 'gu' %}
+                2000માં સ્થાપિત, અમારી સંસ્થા શિક્ષણમાં શ્રેષ્ઠતાની સમૃદ્ધ પરંપરા ધરાવે છે.
+              {% elif CURRENT_LANG == 'hi' %}
+                2000 में स्थापित, हमारे कॉलेज की शिक्षा में उत्कृष्टता की समृद्ध विरासत है।
+              {% else %}
+                Founded in 2000, our college has a legacy of excellence in education.
+              {% endif %}
+            </p>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎓</div>
+        <div>
+          <a href="{% url 'academic' %}">
+            <h3>
+              {% if CURRENT_LANG == 'gu' %}શૈક્ષણિક વિભાગો{% elif CURRENT_LANG == 'hi' %}शैक्षणिक विभाग{% else %}Academic Departments{% endif %}
+            </h3>
+            <p>
+              {% if CURRENT_LANG == 'gu' %}
+                વિજ્ઞાન, કોમર્સ, આઈટી, મેનેજમેન્ટ અને અન્ય.
+              {% elif CURRENT_LANG == 'hi' %}
+                विज्ञान, वाणिज्य, आईटी, मैनेजमेंट और अन्य।
+              {% else %}
+                Science, Commerce, IT, Management and more.
+              {% endif %}
+            </p>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏢</div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=Og4NMqI3q5M" target="_blank">
+            <h3>
+              {% if CURRENT_LANG == 'gu' %}ઇન્ફ્રાસ્ટ્રક્ચર{% elif CURRENT_LANG == 'hi' %}इन्फ्रास्ट्रक्चर{% else %}Infrastructure{% endif %}
+            </h3>
+            <p>
+              {% if CURRENT_LANG == 'gu' %}
+                આધુનિક લેબ્સ, ડિજિટલ લાઇબ્રેરી અને સ્માર્ટ ક્લાસરૂમ્સ.
+              {% elif CURRENT_LANG == 'hi' %}
+                आधुनिक लैब्स, डिजिटल लाइब्रेरी और स्मार्ट कक्षाएँ।
+              {% else %}
+                Modern labs, digital library, and smart classrooms.
+              {% endif %}
+            </p>
+          </a>
+        </div>
+    </div>
+
+    <div class="card">
+            <div class="icon">🏆</div>
+            <div>
+                <a href="{% url 'achievements' %}">
+                <h3>
+                  {% if CURRENT_LANG == 'gu' %}સિદ્ધિઓ{% elif CURRENT_LANG == 'hi' %}उपलब्धियां{% else %}Achievements{% endif %}
+                </h3>
+                <p>NAAC A+.</p>
+                </a>
+            </div>
+      </div>
+</div>
+
+<div class="right">
+        <div class="bot">
+            🤖
+            <div class="speech">
+              {% if CURRENT_LANG == 'gu' %}
+                અમારા વિશે વધુ જાણો!
+              {% elif CURRENT_LANG == 'hi' %}
+                हमारे बारे में और जानें!
+              {% else %}
+                Learn more about us!
+              {% endif %}
+            </div>
+        </div>
+</div>
+{% endblock %}

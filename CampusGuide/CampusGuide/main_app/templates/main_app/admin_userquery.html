@@ -1,0 +1,148 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>{% trans "Campus Guide | User Query Logs" %}</title>
+
+<link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h2>{% trans "Admin Panel" %}</h2>
+
+<ul>
+
+<li>
+<a href="{% url 'admin_dashboard' %}">{% trans "Dashboard" %}</a>
+</li>
+
+<li>
+<a href="{% url 'search_analytics' %}">{% trans "Search Analytics" %}</a>
+</li>
+
+<li>
+<a href="{% url 'admin_review' %}">{% trans "Feedback & Reviews" %}</a>
+</li>
+
+<li>
+<a href="{% url 'admin_languse' %}">{% trans "Language Usage" %}</a>
+</li>
+
+<li class="active">
+<a href="{% url 'admin_userquery' %}">{% trans "User Query Logs" %}</a>
+</li>
+
+</ul>
+
+</aside>
+
+
+<!-- MAIN AREA -->
+
+<div class="main">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div class="topbar-left">
+<img src="{% static 'images/logo.jpg' %}">
+<h1 class="dash-title">{% trans "Admin Dashboard" %}</h1>
+</div>
+
+<div class="topbar-right">
+<span class="welcome">{% trans "Welcome" %}, {{ request.user.username }}</span>
+
+<a href="{% url 'login' %}" class="top-logout">{% trans "Logout" %}</a>
+</div>
+
+</div>
+
+
+<!-- PAGE TITLE -->
+
+<h2 style="margin-bottom:20px;">{% trans "User Query Logs" %}</h2>
+
+
+<!-- TABLE BOX -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+<th>{% trans "Timestamp" %}</th>
+<th>{% trans "User Question" %}</th>
+<th>{% trans "Bot Response" %}</th>
+<th>{% trans "Language" %}</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+{% for q in queries %}
+
+<tr>
+
+<td>{{ q.created_at|date:"d M Y H:i" }}</td>
+
+<td>{{ q.question }}</td>
+
+<td>
+{% if q.response %}
+{{ q.response }}
+{% else %}
+-
+{% endif %}
+</td>
+
+<td>{{ q.language }}</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+<td colspan="4">{% trans "No Query Logs Available" %}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- AUTO REFRESH -->
+
+<script>
+
+setInterval(function(){
+location.reload();
+},5000);
+
+</script>
+
+</body>
+</html>

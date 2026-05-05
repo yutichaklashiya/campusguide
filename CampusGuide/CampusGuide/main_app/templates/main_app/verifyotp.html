@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify OTP</title>
+  <link rel="stylesheet" href="{% static 'css/verifyotp.css' %}">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+  <span class="title">Campus<span>Guide</span></span>
+</div>
+
+<!-- OTP CARD -->
+<div class="otp-card">
+  <h2>OTP Verification</h2>
+  <p class="subtext">
+    We have sent a 6-digit OTP to your registered email
+  </p>
+
+  <form method="POST">
+  {% csrf_token %}
+
+  <div class="otp-inputs">
+    <input type="text" maxlength="1" id="d1">
+    <input type="text" maxlength="1" id="d2">
+    <input type="text" maxlength="1" id="d3">
+    <input type="text" maxlength="1" id="d4">
+    <input type="text" maxlength="1" id="d5">
+    <input type="text" maxlength="1" id="d6">
+  </div>
+
+  <input type="hidden" name="otp" id="finalOtp">
+
+  <button type="submit" onclick="combineOTP()">Verify OTP</button>
+</form>
+
+
+  <p class="timer">
+    Didn’t receive OTP?
+    <span id="countdown">2:00</span>
+  </p>
+
+  <a href="{% url 'resend_otp' %}" class="resend">Resend OTP</a>
+
+  {% if error %}
+    <p style="color:red;">{{ error }}</p>
+  {% endif %}
+</div>
+
+<script src="{% static 'js/verifyotp.js' %}"></script>
+</body>
+</html>

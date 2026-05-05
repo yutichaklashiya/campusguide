@@ -1,0 +1,230 @@
+[
+  {
+    "category": "GENERAL / RESERVED",
+    "scholarships": [
+      {
+        "name": "Mukhymantri Yuva Swavalamban Yojana (MYSY)",
+        "beneficiaries": "Students who pursue Bachelor’s degree",
+        "eligibility_criteria": [
+          "Minimum 80 Percentile in 12th Board Exam",
+          "Have been admitted validly",
+          "The annual income should be lower than ₹. 6 lakh"
+        ],
+        "scholarship_amount": "50% of the tuition fee or ₹. 50000, whichever is lower.",
+        "process": [
+          "Eligible student must register on the `https://mysy.guj.nic.in` ",
+          "Upload the necessary documents and lock the application, and have it verified at the Help Centre as per MYSY"
+        ]
+      },
+      {
+        "name": "Hon. Chief Minister Scholarship Scheme (CMSS)",
+        "beneficiaries": "Students who pursue Bachelor’s degree",
+        "eligibility_criteria": [
+          "Must have passed 10+2 examination from Gujrat Board.",
+          "Family income should be less than ₹. 6 lakhs per Annum.",
+          "Only Applicable for Undergraduate Students."
+        ],
+        "scholarship_amount": "50% of the tuition fee or ₹. 50000, whichever is lower.",
+        "process": [
+          "Eligible student must register on the `https://scholarships.gujarat.gov.in/` ",
+          "upload the necessary documents and lock the application, and have it verified at the Help Centre as per CMSS"
+        ]
+      },
+      {
+        "name": "PRAGATI Scholarship Scheme for Girl Students",
+        "beneficiaries": "Students who pursue Bachelor’s degree",
+        "eligibility_criteria": [
+          "Two Girls Child per family are eligible.",
+          "Family income should be less than ₹. 8 lakhs per Annum.",
+          "Students Admitted for in first year Diploma/Undergraduate Degree Level"
+        ],
+        "scholarship_amount": "As per AICTE Norms",
+        "process": [
+          "The candidates should have been admitted to 1st year of the Degree in any of the AICTE approved institute during the current Academic Year through centralized admission process of the State/ Centre Government"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "SCHEDULED CASTE (SC)",
+    "scholarships": [
+      {
+        "name": "(BCK- 6.1) - Post Matric Scholarship for SC Students (GOI) (Free ship Card Students Only)",
+        "beneficiaries": "SC Students with Free-ship Card",
+        "eligibility_criteria": [
+          "The student must belong to the SC caste",
+          "Must have a valid free-ship card issued by the department",
+          "A minimum of 50% in the previous exam is required",
+          "Annual Income must be below ₹. 2.50 lacs"
+        ],
+        "scholarship_amount": "Full Tuition Fee",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy at Institute"
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      },
+      {
+        "name": "(BCK-5) - Post Matric Scholarship for SC Girls Students Only (Having annual Family Income more than 2.50 Lac) (State Government Scheme)",
+        "beneficiaries": "SC Female Students (Income > 2.50 Lac)",
+        "eligibility_criteria": [
+          "The female student must belong to SC",
+          "A minimum of 50% in the previous exam is required",
+          "Having annual Family Income more than ₹. 2.50 Lacs"
+        ],
+        "scholarship_amount": "Full Tuition Fee",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy at institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      },
+      {
+        "name": "(BCK-5) - Post Matric Scholarship for SC girl’s student only (Having annual family income more than 2.50 Lac) (State Government Scheme) (Free ship Card Student Only)",
+        "beneficiaries": "SC Female Students with Free-ship Card (Income > 2.50 Lac)",
+        "eligibility_criteria": [
+          "The female student must belong to SC",
+          "Student must have Free ship Card",
+          "A minimum of 50% in the previous exam is required",
+          "Having annual Family Income more than ₹. 2.50 Lacs"
+        ],
+        "scholarship_amount": "Full Tuition Fee",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy at institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      },
+      {
+        "name": "(BCK-6.1) - Post Matric Scholarship for SC Students (GOI)",
+        "beneficiaries": "SC Students without Free-ship Card",
+        "eligibility_criteria": [
+          "The student must belong to the SC caste but not getting Free-ship card",
+          "A minimum of 50% in the previous exam is required",
+          "Annual Income must be below ₹. 2.5 lacs"
+        ],
+        "scholarship_amount": "Full Tuition Fee",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy at institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      },
+      {
+        "name": "(BCK-10) - Food Bill Assistance to SC Students",
+        "beneficiaries": "SC Students studying in hostels affiliated to the institute",
+        "eligibility_criteria": [
+          "Students studying in hostels affiliated to the institute only"
+        ],
+        "scholarship_amount": "₹. 1500 Per Month (for 10 month)",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy at institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      },
+      {
+        "name": "(BCK-12) - Instrumental Help to SC Students (Medical, Engineering, Diploma Students Only)",
+        "beneficiaries": "SC Students in First Year (Medical/Engineering/Diploma)",
+        "eligibility_criteria": [
+          "The student must belong to the SC caste and studying in First Year only"
+        ],
+        "scholarship_amount": "₹. 10,000/- for Medical, ₹. 8000/- form Engineering",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy at institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      }
+    ]
+  },
+  {
+    "category": "OBC/EBC/SEBC",
+    "scholarships": [
+      {
+        "name": "PM YASASVI Post Matric Scholarship For OBC , EBC & DNT Students",
+        "beneficiaries": "Students belonging to OBC, EBC & DNT",
+        "eligibility_criteria": [
+          "The student must belong to the OBC , EBC & DNT",
+          "Income must be below ₹. 2.5 lacs"
+        ],
+        "scholarship_amount": "As per Government Guideline",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy at institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      }
+    ]
+  },
+  {
+    "category": "SCHEDULED TRIBE (ST)",
+    "scholarships": [
+      {
+        "name": "Freeship Card Scholarship (ST)",
+        "beneficiaries": "For students who belong to Scheduled Tribe (ST) Category",
+        "eligibility_criteria": [
+          "The student must belong to the ST Caste",
+          "Must have a valid free-ship card issued by the department",
+          "A minimum of 50% in the previous exam is required",
+          "Income must be below ₹. 2.5 lacs"
+        ],
+        "scholarship_amount": "Full Tuition Fee",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy to the institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      },
+      {
+        "name": "Post Metric Scholarship (ST)",
+        "beneficiaries": "For students who belong to Scheduled Tribe (ST) Category",
+        "eligibility_criteria": [
+          "The student must belong to the ST Caste",
+          "A minimum of 50% in the previous exam is required",
+          "Annual Income must be below ₹. 2.5 lacs"
+        ],
+        "scholarship_amount": "Full Tuition Fee",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy to the institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      },
+      {
+        "name": "Post Metric Scholarship (ST)",
+        "beneficiaries": "For female students who belong to Scheduled Tribe (ST) Category",
+        "eligibility_criteria": [
+          "The female student must belong to ST Caste",
+          "A minimum of 50% in the previous exam is required",
+          "The Annual Income must be below ₹. 2.5 lacs"
+        ],
+        "scholarship_amount": "Full Tuition Fee",
+        "process": [
+          "Eligible Students must register on the Digital Gujarat website, upload the necessary documents, lock the application, and submit the hard copy to the institute."
+        ],
+        "notes": "For More Information Regarding Eligibility Criteria of Digital Gujarat Scholarship Please Visit: www.digitalgujarat.gov.in"
+      }
+    ]
+  },
+  {
+    "category": "POST GRADUATE PROGRAM BY AICTE",
+    "scholarships": [
+      {
+        "name": "GPAT Scholarship",
+        "beneficiaries": "For Students who pursue Master’s Degree",
+        "eligibility_criteria": [
+          "Students who are GPAT/GATE qualified and enroll in M. Pharm. Program"
+        ],
+        "scholarship_amount": "As per AICTE Norms",
+        "process": [
+          "Students who are eligible must register on the AICTE Portal and upload the necessary documents, then lock their application and verify it at their institute."
+        ],
+        "notes": "For More Information Regarding Eligibility of Scholarship Please Visit: www.aicte-india.org"
+      },
+      {
+        "name": "GATE Scholarship",
+        "beneficiaries": "For Students who pursue Master’s Degree",
+        "eligibility_criteria": [
+          "Students who are GATE qualified and enroll in M. Tech. Program"
+        ],
+        "scholarship_amount": "As per AICTE Norms",
+        "process": [
+          "Students who are eligible must register on the AICTE Portal and upload the necessary documents, then lock their application and verify it at their institute."
+        ],
+        "notes": "For More Information Regarding Eligibility of Scholarship Please Visit: www.aicte-india.org"
+      }
+    ]
+  }
+]

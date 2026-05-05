@@ -1,0 +1,402 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>{% trans "Campus Guide | Search Analytics" %}</title>
+
+<link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}?v=1.3">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+  /* Global Simple Hover for Search Analytics */
+  .chart-box:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1) !important;
+    background: #ffffff !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Ensure uniform layout */
+  .charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 10px;
+  }
+
+  .chart-box {
+    background: white;
+    padding: 25px 25px 40px 25px; /* Increased bottom padding for labels */
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    height: 420px; /* Slightly increased height */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chart-box h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+    border-left: 4px solid #3b82f6;
+    padding-left: 12px;
+  }
+
+  .chart-box canvas {
+    flex: 1;
+  }
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h2>{% trans "Admin Panel" %}</h2>
+
+<ul>
+
+<li><a href="{% url 'admin_dashboard' %}">{% trans "Dashboard" %}</a></li>
+
+<li class="active"><a href="{% url 'search_analytics' %}">{% trans "Search Analytics" %}</a></li>
+
+<li><a href="{% url 'admin_review' %}">{% trans "Feedback & Reviews" %}</a></li>
+
+<li><a href="{% url 'admin_languse' %}">{% trans "Language Usage" %}</a></li>
+
+<li><a href="{% url 'admin_userquery' %}">{% trans "User Query Logs" %}</a></li>
+
+</ul>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<img src="{% static 'images/logo.jpg' %}" alt="Logo">
+
+<h1 class="dash-title">{% trans "Search Analytics" %}</h1>
+
+</div>
+
+<div class="topbar-right">
+
+<span class="welcome">{% trans "Welcome" %}, {{ request.user.username }}</span>
+
+<a href="{% url 'login' %}" class="top-logout">{% trans "Logout" %}</a>
+
+</div>
+
+</header>
+
+<!-- CHART GRID -->
+
+<section class="charts">
+
+<!-- TOP KEYWORDS -->
+
+<div class="chart-box">
+
+<h3>{% trans "Top Searched Keywords" %}</h3>
+
+<div style="flex: 1; position: relative;">
+    <canvas id="keywordChart" class="bounce-chart"></canvas>
+</div>
+
+</div>
+
+<!-- CATEGORY SEARCH -->
+
+<div class="chart-box">
+
+<h3>{% trans "Category-wise Search Count" %}</h3>
+
+<div style="flex: 1; position: relative;">
+    <canvas id="categoryChart" class="spin-chart"></canvas>
+</div>
+
+</div>
+
+<!-- DATE TREND -->
+
+<div class="chart-box">
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+    <h3 style="margin: 0; border-left: 4px solid #3b82f6;">{% trans "Date-wise Search Trend" %}</h3>
+</div>
+
+<div style="flex: 1; min-height: 0;">
+    <canvas id="dateChart"></canvas>
+</div>
+
+</div>
+
+<!-- CAMPUS LIFE TREND -->
+
+<div class="chart-box">
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+    <h3 style="margin: 0; border-left: 4px solid #10b981;">{% trans "Campus Life Search Trend" %}</h3>
+    {% if top_campus_topic != "None" %}
+    <span style="background: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+        {% trans "Most Searched" %}: {{ top_campus_topic }}
+    </span>
+    {% endif %}
+</div>
+
+<canvas id="campusChart"></canvas>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script>
+
+/* ================= TOP KEYWORDS ================= */
+
+const keywordLabels = [
+{% for item in top_keywords %}
+"{{ item.keyword }}",
+{% endfor %}
+];
+
+const keywordCounts = [
+{% for item in top_keywords %}
+{{ item.count }},
+{% endfor %}
+];
+
+
+new Chart(document.getElementById("keywordChart"),{
+
+type:"bar",
+
+data:{
+labels:keywordLabels,
+datasets:[{
+label:"Search Count",
+data:keywordCounts,
+backgroundColor:"#3b82f6",
+borderRadius: 10
+}]
+},
+options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+        duration: 2000,
+        easing: 'easeOutQuart'
+    },
+    plugins: {
+        legend: { display: false }
+    },
+    scales: {
+        y: { 
+            beginAtZero: true, 
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            ticks: { stepSize: 1 }
+        },
+        x: { grid: { display: false } }
+    }
+}
+
+});
+
+
+
+/* ================= CATEGORY CHART ================= */
+
+const categoryLabels = [
+{% for item in category_data %}
+"{{ item.category }}",
+{% endfor %}
+];
+
+const categoryCounts = [
+{% for item in category_data %}
+{{ item.count }},
+{% endfor %}
+];
+
+
+new Chart(document.getElementById("categoryChart"),{
+
+type:"doughnut",
+
+data:{
+labels:categoryLabels,
+datasets:[{
+data:categoryCounts,
+backgroundColor:[
+"#3b82f6",
+"#10b981",
+"#f59e0b",
+"#ef4444",
+"#8b5cf6"
+],
+borderWidth: 2,
+borderColor: '#ffffff',
+hoverOffset: 15
+}]
+},
+options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    layout: {
+        padding: 20
+    },
+    animation: {
+        animateRotate: true,
+        animateScale: true,
+        duration: 2000,
+        easing: 'easeOutQuart'
+    },
+    plugins: {
+        legend: { 
+            position: 'bottom',
+            labels: {
+                padding: 20,
+                usePointStyle: true,
+                font: { size: 12 }
+            }
+        }
+    },
+    cutout: '70%'
+}
+
+});
+
+
+
+/* ================= DATE TREND ================= */
+
+const dateDataRaw = {{ date_data|safe }};
+// Ensure we have at least some data for the line to show
+const dateLabels = dateDataRaw.length > 0 ? dateDataRaw.map(item => item.date) : ["No Data"];
+const dateCounts = dateDataRaw.length > 0 ? dateDataRaw.map(item => item.count) : [0];
+
+
+new Chart(document.getElementById("dateChart"),{
+
+type:"line",
+
+data:{
+labels:dateLabels,
+datasets:[{
+label:"Search Trend",
+data:dateCounts,
+borderColor:"#3b82f6",
+backgroundColor: 'rgba(59, 130, 246, 0.1)',
+fill: true,
+tension: 0.4,
+pointRadius: 4,
+pointBackgroundColor: "#3b82f6",
+borderWidth: 3
+}]
+},
+options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+        duration: 2500,
+        easing: 'easeInOutQuad'
+    },
+    scales: {
+        y: { 
+            beginAtZero: true,
+            grid: { color: 'rgba(0,0,0,0.05)' }
+        },
+        x: { grid: { display: false } }
+    }
+}
+
+});
+
+
+
+/* ================= CAMPUS LIFE TREND ================= */
+
+const campusLabels = [
+{% for item in campus_life_data %}
+"{{ item.topic }}",
+{% endfor %}
+];
+
+const campusCounts = [
+{% for item in campus_life_data %}
+{{ item.count }},
+{% endfor %}
+];
+
+
+new Chart(document.getElementById("campusChart"),{
+
+type:"bar",
+
+data:{
+labels:campusLabels,
+datasets:[{
+label:"Campus Searches",
+data:campusCounts,
+backgroundColor:"#10b981",
+borderRadius: 10
+}]
+},
+options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+        duration: 2000,
+        easing: 'easeOutQuart'
+    },
+    plugins: {
+        legend: { display: false }
+    },
+    scales: {
+        y: { 
+            beginAtZero: true,
+            grid: { color: 'rgba(0,0,0,0.05)' }
+        },
+        x: { 
+            grid: { display: false },
+            ticks: {
+                autoSkip: false,
+                maxRotation: 0,
+                minRotation: 0
+            }
+        }
+    }
+}
+
+});
+
+
+</script>
+
+</body>
+</html>

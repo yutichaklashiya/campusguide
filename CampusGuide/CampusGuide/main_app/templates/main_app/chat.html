@@ -1,0 +1,136 @@
+{% extends "main_app/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/chat.css' %}?v=20260427">
+<link rel="stylesheet" href="{% static 'css/history.css' %}?v=20260427">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+
+  <form style="display:none;">
+    {% csrf_token %}
+  </form>
+
+  <!-- History toggle button (mobile & always visible) -->
+  <button class="history-toggle-btn" id="historyToggleBtn" onclick="toggleHistorySidebar()" title="Chat History">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7a6.98 6.98 0 0 1-4.95-2.05l-1.41 1.41A8.96 8.96 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+  </button>
+
+  <div class="chat-layout-wrapper">
+
+  <!-- ===== HISTORY SIDEBAR ===== -->
+  <aside class="history-sidebar" id="historySidebar">
+    <div class="history-header">
+      <h3>💬 Chat History</h3>
+      <button class="history-close-btn" onclick="toggleHistorySidebar()" title="Close">✕</button>
+      <button class="history-clear-btn" onclick="clearChatHistory()" title="Clear all history">🗑️</button>
+    </div>
+    <div class="history-list" id="historyList">
+      <p class="history-empty" id="historyEmpty">No conversations yet.</p>
+    </div>
+  </aside>
+  <!-- ===== END HISTORY SIDEBAR ===== -->
+
+  <div class="chat-container">
+    <div class="chat-box" id="chatBox">
+
+      <div class="bot-msg">
+        <div class="message-bubble">
+          <span>🤖</span>
+          <p>{% trans "Hi! I'm your virtual Campus Guide. How can I assist you today?" %}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== MAP OVERLAY (covers entire chat container) ===== -->
+    <div class="map-overlay" id="mapOverlay">
+      <div class="map-overlay-header">
+        <span class="map-overlay-title">🗺️ Campus Navigation</span>
+        <button type="button" class="map-overlay-close" onclick="closeMapPanel()" title="Close map">&times;</button>
+      </div>
+
+      <div class="map-inputs">
+        <div class="map-input-group">
+          <label for="mapStartPoint">Starting Point</label>
+          <input
+            type="text"
+            id="mapStartPoint"
+            value="Current Location"
+            placeholder="Current Location or campus location"
+            list="startPointSuggestions"
+            autocomplete="off">
+          <datalist id="startPointSuggestions"></datalist>
+        </div>
+        <div class="map-input-group">
+          <label for="mapEndPoint">Destination</label>
+          <select id="mapEndPoint">
+            <option value="">-- Select destination --</option>
+          </select>
+        </div>
+        <button type="button" class="map-directions-btn" onclick="getDirections()">
+          🚶 Get Directions
+        </button>
+      </div>
+
+      <div class="map-status" id="mapStatus"></div>
+      <div class="map-canvas" id="campusMap"></div>
+    </div>
+    <!-- ===== END MAP OVERLAY ===== -->
+
+    <div class="input-area">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="{% trans "Type your message..." %}"
+        onkeydown="handleEnter(event)"
+        list="chat-keyword-suggestions"
+        autocomplete="off">
+      <button type="button" class="mic" id="voiceBtn" onclick="toggleVoiceInput()" title="{% trans "Speak your question" %}" aria-label="{% trans "Speak your question" %}">
+        <svg class="mic-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 15a3 3 0 0 0 3-3V7a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3zm5-3a1 1 0 1 1 2 0 7 7 0 0 1-6 6.92V21h3a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h3v-2.08A7 7 0 0 1 5 12a1 1 0 1 1 2 0 5 5 0 1 0 10 0z"/>
+        </svg>
+      </button>
+      <button type="button" class="map-btn" id="mapBtn" onclick="toggleMapPanel()" title="{% trans "Campus Map" %}" aria-label="{% trans "Campus Map" %}">
+        <svg class="map-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/>
+        </svg>
+      </button>
+      <button type="button" class="send" onclick="sendMessage()">➤</button>
+      <button type="button" class="end" onclick="endChat()">{% trans "End Chat" %}</button>
+    </div>
+    <div class="voice-status" id="voiceStatus"></div>
+  </div>
+
+  </div><!-- end chat-layout-wrapper -->
+
+  <!-- Common keyword suggestions for auto-complete -->
+  <datalist id="chat-keyword-suggestions">
+    <option value="admission"></option>
+    <option value="eligibility"></option>
+    <option value="fees"></option>
+    <option value="placements"></option>
+    <option value="hostel"></option>
+    <option value="library"></option>
+    <option value="courses"></option>
+    <option value="B.Tech eligibility"></option>
+    <option value="B.Tech fees"></option>
+    <option value="BCA"></option>
+    <option value="MCA"></option>
+    <option value="BPT"></option>
+    <option value="MPT"></option>
+    <option value="CMPICA placements"></option>
+    <option value="CMPICA clubs"></option>
+  </datalist>
+
+  <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+  <!-- Leaflet JS -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- DJANGO STATIC JS -->
+  <script src="{% static 'js/chat.js' %}?v=20260427"></script>
+  <!-- Chat History JS -->
+  <script src="{% static 'js/history.js' %}?v=20260427"></script>
+  <!-- Campus Map JS -->
+  <script src="{% static 'js/map.js' %}?v=20260428"></script>
+{% endblock %}

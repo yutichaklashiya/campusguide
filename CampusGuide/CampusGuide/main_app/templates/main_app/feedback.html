@@ -1,0 +1,32 @@
+{% extends "main_app/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/feedback.css' %}?v=20260428">
+
+<div class="feedback-wrapper">
+
+    <div class="feedback-card">
+        <form method="POST">
+            {% csrf_token %}
+            <h2>{% trans "Share Your Experience" %}</h2>
+            <p class="subtext">{% trans "How would you rate your chat experience today?" %}</p>
+            <input type="hidden" name="rating" id="ratingInput" value="0">
+            <div class="stars" data-rating="0">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <textarea name="message" placeholder="{% trans "Share your feedback..." %}"></textarea>
+            <button type="submit">{% trans "Submit Feedback" %}</button>
+        </form>
+        <p class="footer-text" style="width:100%; text-align:center; margin-top:18px;">{% trans "Your feedback helps us improve!" %}</p>
+    </div>
+
+    <img src="{% static 'images/feedback.png' %}" class="img">
+
+</div>
+
+<script src="{% static 'js/feedback.js' %}"></script>
+
+{% endblock %}

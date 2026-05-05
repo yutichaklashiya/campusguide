@@ -1,0 +1,355 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>{% trans "Campus Guide | Admin Dashboard" %}</title>
+
+<link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}?v=1.3">
+
+<style>
+  /* Global Simple Hover for All Dashboard Elements */
+  .cards .card:hover,
+  .chart-box:hover,
+  .table-box:hover,
+  .feedback-box:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1) !important;
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Remove any extra decorations */
+  .cards .card::after,
+  .chart-box::after,
+  .feedback-box::after {
+    display: none !important;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h2>{% trans "Admin Panel" %}</h2>
+
+<ul>
+
+<li class="active"><a href="{% url 'admin_dashboard' %}">{% trans "Dashboard" %}</a></li>
+
+<li><a href="{% url 'search_analytics' %}">{% trans "Search Analytics" %}</a></li>
+
+<li><a href="{% url 'admin_review' %}">{% trans "Feedback & Reviews" %}</a></li>
+
+<li><a href="{% url 'admin_languse' %}">{% trans "Language Usage" %}</a></li>
+
+<li><a href="{% url 'admin_userquery' %}">{% trans "User Query Logs" %}</a></li>
+
+</ul>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+<!-- TOP BAR -->
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<img src="{% static 'images/logo.jpg' %}" alt="Campus Guide Logo">
+
+<h1 class="dash-title">{% trans "Admin Dashboard" %}</h1>
+
+</div>
+
+<div class="topbar-right">
+
+<span class="welcome">{% trans "Welcome" %}, {{ request.user.username }}</span>
+
+<a href="{% url 'login' %}" class="top-logout">{% trans "Logout" %}</a>
+
+</div>
+
+</header>
+
+<!-- SUMMARY CARDS -->
+
+<section class="cards">
+
+<div class="card">
+<h3>{% trans "Total Queries" %}</h3>
+<p>{{ total_queries }}</p>
+</div>
+
+<div class="card">
+<h3>{% trans "Positive Feedback" %}</h3>
+<p>{{ positive_percentage }}%</p>
+</div>
+
+<div class="card">
+<h3>{% trans "Total Users" %}</h3>
+<p>{{ total_users }}</p>
+</div>
+
+</section>
+
+<!-- CHARTS -->
+
+<section class="charts">
+
+<div class="chart-box">
+
+<h3>{% trans "Language Usage" %}</h3>
+
+<div style="flex: 1; position: relative;">
+    <canvas id="languageChart" class="spin-chart"></canvas>
+</div>
+
+</div>
+
+<div class="chart-box">
+
+<h3>{% trans "Most Searched Topics" %}</h3>
+
+<div style="flex: 1; position: relative;">
+    <canvas id="keywordChart" class="bounce-chart"></canvas>
+</div>
+
+</div>
+
+</section>
+
+<!-- TABLE + FEEDBACK -->
+
+<section class="bottom">
+
+<div class="table-box">
+
+<h3>{% trans "Recent Queries" %}</h3>
+
+<table>
+
+<tr>
+<th>{% trans "User" %}</th>
+<th>{% trans "Query" %}</th>
+<th>{% trans "Language" %}</th>
+<th>{% trans "Date" %}</th>
+</tr>
+
+{% for query in recent_queries %}
+
+<tr>
+
+<td>{{ query.user.username }}</td>
+
+<td>{{ query.question }}</td>
+
+<td>{{ query.language }}</td>
+
+<td>{{ query.created_at|date:"d-m-Y H:i" }}</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+<td colspan="4">{% trans "No queries yet" %}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<div class="feedback-box" style="background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%); border: none;">
+
+<h3>{% trans "Feedback Summary" %}</h3>
+
+<div class="rating-display" style="text-align: center; padding: 25px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(25, 118, 210, 0.1); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -10px; right: -10px; width: 60px; height: 60px; background: rgba(25, 118, 210, 0.05); border-radius: 50%;"></div>
+    
+    <div style="margin-top: 15px;">
+        <span style="font-size: 64px; font-weight: 900; color: #1976d2; letter-spacing: -1px;">{{ avg_rating }}</span>
+        <span style="font-size: 24px; color: #999; font-weight: 600;">/ 5.0</span>
+    </div>
+    <p style="color: #666; font-size: 14px; font-weight: 600; margin-top: 5px; text-transform: uppercase;">{% trans "Average Rating" %}</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script>
+
+/* LANGUAGE DONUT CHART */
+
+const languageLabels = {{ languages|safe }};
+const languageCounts = {{ language_counts|safe }};
+
+new Chart(document.getElementById('languageChart'), {
+
+type: 'doughnut',
+
+data: {
+
+labels: languageLabels,
+
+datasets: [{
+
+data: languageCounts,
+
+backgroundColor: [
+
+'#3498db',
+
+'#2ecc71',
+
+'#f39c12',
+
+'#e74c3c',
+
+'#9b59b6'
+
+],
+hoverOffset: 30,
+borderWidth: 3,
+borderColor: '#ffffff'
+
+}]
+
+},
+options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+        animateRotate: true,
+        animateScale: true,
+        duration: 3000,
+        easing: 'easeOutQuart'
+    },
+    plugins: {
+        legend: {
+            position: 'bottom',
+            labels: {
+                padding: 20,
+                usePointStyle: true,
+                font: {
+                    size: 12,
+                    weight: 'bold'
+                }
+            }
+        }
+    },
+    cutout: '70%'
+}
+
+});
+
+
+/* MOST SEARCHED TOPICS BAR CHART */
+
+const keywordLabels = {{ keywords|safe }};
+const keywordCounts = {{ keyword_counts|safe }};
+
+new Chart(document.getElementById('keywordChart'), {
+
+type: 'bar',
+
+data: {
+
+labels: keywordLabels,
+
+datasets: [{
+
+label: 'Search Count',
+
+data: keywordCounts,
+
+backgroundColor: 'rgba(52, 152, 219, 0.7)',
+hoverBackgroundColor: '#1976d2',
+borderRadius: 10,
+borderWidth: 0,
+barThickness: 40
+
+}]
+
+},
+
+options:{
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+        duration: 2500,
+        easing: 'easeInOutBack',
+        delay: (context) => context.dataIndex * 200
+    },
+    scales:{
+        y:{
+            beginAtZero:true,
+            grid: {
+                display: true,
+                color: 'rgba(0,0,0,0.05)',
+                drawBorder: false
+            },
+            ticks: {
+                stepSize: 1
+            }
+        },
+        x: {
+            grid: {
+                display: false
+            }
+        }
+    },
+    plugins: {
+        legend: {
+            display: false
+        },
+        tooltip: {
+            backgroundColor: '#1976d2',
+            padding: 12,
+            titleFont: { size: 14 },
+            bodyFont: { size: 13 },
+            displayColors: false
+        }
+    }
+}
+
+});
+
+
+/* AUTO REFRESH DASHBOARD */
+
+setInterval(function(){
+
+location.reload();
+
+},60000); // refresh every 60 seconds
+
+
+</script>
+
+</body>
+
+</html>

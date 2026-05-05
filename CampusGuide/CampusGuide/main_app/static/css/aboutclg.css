@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: #eaf3fe;
+}
+
+/* ================= HEADER ================= */
+.top-header {
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  /* BLUE BORDER TOP & BOTTOM */
+  border-top: 2px solid #1976d2;
+  border-bottom: 2px solid #1976d2;
+}
+
+/* LEFT SIDE (LOGO + TITLE) */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left img {
+  width: 70px;
+}
+
+.header-left h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.header-left h1 span {
+  color: #1976d2;
+}
+
+/* RIGHT SIDE (MENU) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header-right a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-right a:hover {
+  color: #1976d2;
+}
+
+.header-right select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* MAIN LAYOUT */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    gap: 40px;
+}
+
+/* LEFT SECTION */
+.left {
+    width: 60%;
+}
+
+.left h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.left span {
+    color: #4a6cf7;
+}
+
+/* CARD STYLE */
+.card {
+    background: #ffffff;
+    display: flex;
+    gap: 15px;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.card:hover{
+    transform: translateX(4px);
+  
+}
+
+.icon {
+    font-size: 28px;
+}
+
+.card h3 {
+    margin-bottom: 6px;
+}
+
+.card a{
+  text-decoration: none;
+  color: black;
+}
+
+.card p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* RIGHT SECTION */
+.right {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bot {
+    background: #e6eeff;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    position: relative;
+}
+
+.speech {
+    position: absolute;
+    top: -25px;
+    right: -40px;
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}

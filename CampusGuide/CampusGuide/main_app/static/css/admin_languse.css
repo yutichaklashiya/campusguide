@@ -1,0 +1,82 @@
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:Segoe UI, sans-serif;
+}
+
+body{
+ background:#eef3f8;
+}
+
+.header{
+ background:#fff;
+ padding:15px 30px;
+ display:flex;
+ align-items:center;
+ box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* LOGO + TITLE */
+.header-left{
+ display:flex;
+ align-items:center;
+ gap:12px;
+}
+
+.header-left img{
+ width:70px;
+ height:70px;
+ object-fit:contain;
+}
+
+.header-left h1{
+ font-size:26px;
+}
+
+/* CONTAINER */
+.container{
+ width:80%;
+ margin:40px auto;
+ background:#f8fbff;
+ padding:30px;
+ border-radius:20px;
+}
+
+/* PAGE TITLE */
+.page-title{
+ font-size:22px;
+ margin-bottom:25px;
+}
+
+/* GRID */
+.grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:20px;
+}
+
+/* CARD */
+.card{
+ background:#fff;
+ min-height:180px;
+ padding:20px;
+ border-radius:16px;
+ box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3{
+ font-size:16px;
+ font-weight:600;
+}
+
+/* POSITIONING */
+.category{
+ grid-column:2;
+ grid-row:1;
+}
+
+.reviews{
+ grid-column:2;
+ grid-row:2;
+}

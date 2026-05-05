@@ -1,0 +1,458 @@
+[
+  {
+    "institute": "CSPIT",
+    "program_type": "Undergraduate (B.Tech)",
+    "duration": "4 Years",
+    "details": [
+      {
+        "program": "B.Tech. (Computer Engineering / Information Technology / Computer Science and Engineering / Artificial Intelligence and Machine Learning / Electronics and Communication Engineering)",
+        "fees": "1,72,000",
+        "acpc_merit_rank_2026": "Up to 4000",
+        "scholarship_scheme": "100% of Tuition Fee as Scholarship",
+        "notes": "Offered to top ten meritorious students."
+      },
+      {
+        "program": "B.Tech. (Mechanical Engineering / Electrical Engineering)",
+        "fees": "1,72,000",
+        "acpc_merit_rank_2026": "Up to 6500",
+        "scholarship_scheme": "100% of Tuition Fee as Scholarship",
+        "notes": "Offered to top five meritorious students."
+      },
+      {
+        "program": "B.Tech. (Civil Engineering)",
+        "fees": "1,72,000",
+        "acpc_merit_rank_2026": "Up to 15000",
+        "scholarship_scheme": "100% of Tuition Fee as Scholarship",
+        "notes": "Offered to top five meritorious students."
+      }
+    ],
+    "special_schemes": [
+      {
+        "name": "Female Student Scholarship (Core Branches)",
+        "description": "First five female students admitted to ME/CL/EE will be awarded 100% tuition fee scholarship.",
+        "eligibility": "First Come, First Serve; Minimum 60% overall in HSC; Mandatory ACPC registration."
+      }
+    ],
+    "general_rules": [
+      "All scholarships of the UG Programme shall be given through Management Quota Admissions.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "DEPSTAR",
+    "program_type": "Undergraduate (B.Tech)",
+    "duration": "4 Years",
+    "details": [
+      {
+        "program": "B.Tech. (Computer Science & Engineering / Computer Engineering / Information Technology)",
+        "fees": "1,72,000",
+        "acpc_merit_rank_2026": "Up to 4000",
+        "scholarship_scheme": "100% of Tuition Fee as Scholarship",
+        "notes": "Offered to top ten meritorious students."
+      }
+    ],
+    "general_rules": [
+      "All scholarships of the UG Programme shall be given through Management Quota Admissions.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "CSPIT",
+    "program_type": "Postgraduate (M.Tech)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "M.Tech. (Computer Engineering)",
+        "fees": "1,35,000",
+        "scholarship_scheme": "100% of Tuition Fee",
+        "max_students": "3 students (First Come First Serve)"
+      },
+      {
+        "program": "M.Tech. (Advanced Manufacturing Technology)",
+        "fees": "1,10,000",
+        "scholarship_scheme": "GATE Scholarship",
+        "max_students": "3 students (First Come First Serve)"
+      },
+      {
+        "program": "M.Tech. (Structural Engineering / Thermal Engineering)",
+        "fees": "1,10,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      }
+    ],
+    "general_rules": [
+      "All scholarships for the PG programme will be awarded through both State Quota and Management Quota admissions.",
+      "Scholarship continuation eligibility: Students who have cleared university exam without any backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "I2IM",
+    "program_type": "Undergraduate (BBA)",
+    "duration": "3 Years",
+    "details": [
+      {
+        "program": "Bachelor of Business Administration (BBA)",
+        "fees": "1,00,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      },
+      {
+        "program": "Online BBA",
+        "fees": "50,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "I2IM",
+    "program_type": "Postgraduate (MBA)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "Master of Business Administration (MBA)",
+        "fees": "1,45,000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship for top 3 meritorious students with >= 8.5 CGPA in graduation."
+      },
+      {
+        "program": "Master of Business Administration (MBA)",
+        "fees": "1,45,000",
+        "scholarship_scheme": "Rs. 25,000/- Tuition Fee Scholarship for students with >= 75% marks."
+      },
+      {
+        "program": "M.Sc. Management",
+        "fees": "1,45,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      },
+      {
+        "program": "Online MBA",
+        "fees": "75,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation (2nd Year): Top 3 students with >= 8.5 CGPA and no backlog get 100% fee. Others with >= 8.0 CGPA get Rs. 20,000/-.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "ARIP",
+    "program_type": "Undergraduate (B.PT)",
+    "duration": "4.5 Years",
+    "details": [
+      {
+        "program": "Bachelor of Physiotherapy (B.PT)",
+        "fees": "1,62,000",
+        "scholarship_scheme": "Merit Scholarship for top meritorious students."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "ARIP",
+    "program_type": "Postgraduate (M.PT)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "Master of Physiotherapy (Musculoskeletal Science / Neurological Science / Cardiopulmonary Science / Paediatric / Rehabilitation)",
+        "fees": "2,00,000",
+        "scholarship_scheme": "Merit Scholarship for top meritorious students."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "RPCP",
+    "program_type": "Undergraduate (B.Pharm)",
+    "duration": "4 Years",
+    "details": [
+      {
+        "program": "Bachelor of Pharmacy (B.Pharm.)",
+        "fees": "1,45,000",
+        "acpc_merit_rank_2026": "Up to 2000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship (for top 3 meritorious students)."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation (2nd/3rd/4th Year): Top 3 meritorious students with CGPA >= 8.5 and no backlogs get 100% tuition fee scholarship.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "RPCP",
+    "program_type": "Postgraduate (M.Pharm)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "Master of Pharmacy (Pharmaceutical Technology / Pharmaceutical Quality Assurance / Pharmacology / Pharmacy Practice / Regulatory Affairs / Pharmaceutical Chemistry)",
+        "fees": "2,00,000",
+        "scholarship_scheme": "Merit Scholarship for top meritorious students."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "PDPIAS",
+    "program_type": "Undergraduate (B.Sc.)",
+    "duration": "3 Years",
+    "details": [
+      {
+        "program": "B.Sc. (Microbiology / Biochemistry / Biotechnology)",
+        "fees": "80,000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship for top 5 meritorious students of PDPIAS."
+      },
+      {
+        "program": "B.Sc. (Chemistry)",
+        "fees": "50,000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship for top 5 meritorious students of PDPIAS."
+      },
+      {
+        "program": "B.Sc. (General) - (Physics, Chemistry, Maths, Biology)",
+        "fees": "60,000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship for top 5 meritorious students of PDPIAS."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "PDPIAS",
+    "program_type": "Postgraduate (M.Sc.)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "M.Sc. (Microbiology / Biochemistry / Biotechnology)",
+        "fees": "1,00,000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship for top 5 meritorious students of PDPIAS."
+      },
+      {
+        "program": "M.Sc. (Advance Organic Chemistry)",
+        "fees": "85,000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship for top 5 meritorious students of PDPIAS."
+      },
+      {
+        "program": "M.Sc. (Physics)",
+        "fees": "50,000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship for top 5 meritorious students of PDPIAS."
+      },
+      {
+        "program": "M.Sc. (Mathematics)",
+        "fees": "45,000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship for top 5 meritorious students of PDPIAS."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "MTIN",
+    "program_type": "Undergraduate (Nursing)",
+    "duration": "4 Years",
+    "details": [
+      {
+        "program": "B.Sc. Nursing",
+        "fees": "1,58,000",
+        "acpc_merit_rank_2026": "Up to 1000",
+        "scholarship_scheme": "100% Tuition Fee Scholarship."
+      },
+      {
+        "program": "B.Sc. Nursing",
+        "fees": "1,58,000",
+        "hsc_marks_2026": "80%",
+        "scholarship_scheme": "Rs. 10,000/- Tuition Fee Scholarship."
+      },
+      {
+        "program": "General Nursing Midwifery (GNM)",
+        "fees": "1,20,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      },
+      {
+        "program": "Post Basic Bachelor of Science in Nursing",
+        "fees": "86,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation (2nd/3rd/4th Year): Students with >= 9 CGPA and no backlog get 100% fee scholarship. Students with >= 8 CGPA get Rs. 15,000/- scholarship.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "MTIN",
+    "program_type": "Postgraduate (Nursing)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "M.Sc. Nursing (Community Health / Mental Health / Obstetrics and Gynaecology / Child Health / Medical Surgical)",
+        "fees": "1,70,000",
+        "scholarship_scheme": "Merit Scholarship for top meritorious students."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "CMPICA",
+    "program_type": "Undergraduate (BCA)",
+    "duration": "3/4 Years",
+    "details": [
+      {
+        "program": "Bachelor of Computer Applications (BCA)",
+        "fees": "80,000",
+        "hsc_marks_2026": "> 90%",
+        "scholarship_scheme": "100% of tuition Fee as Scholarship will be awarded to top five meritorious students"
+      },
+      {
+        "program": "Bachelor of Computer Applications (BCA)",
+        "fees": "80,000",
+        "hsc_marks_2026": "> 70%",
+        "scholarship_scheme": "Rs. 10,000 of Tuition Fee as Scholarship"
+      },
+      {
+        "program": "Bachelor of Computer Applications (BCA) - Honours",
+        "notes": "The Tuition Fee and Merit scholarship for the 4th year of BCA Honours will be equivalent to the MCA Fee and Scholarship approved for that year."
+      }
+    ],
+    "general_rules": [
+      "Scholarship Eligibility for Second and Third Year: Top 5 Students who have achieved a CGPA >= 9.5 without any backlogs at the end of the First or Second year will get 100% tuition fee as a scholarship.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "CMPICA",
+    "program_type": "Undergraduate (B.Sc. IT)",
+    "duration": "3/4 Years",
+    "details": [
+      {
+        "program": "Bachelor of Science (Information Technology) (B.Sc. IT)",
+        "fees": "75,000",
+        "hsc_marks_2026": "> 80%",
+        "scholarship_scheme": "100% of tuition Fee as Scholarship will be awarded to top five meritorious students"
+      },
+      {
+        "program": "Bachelor of Science (Information Technology) (B.Sc. IT)",
+        "fees": "75,000",
+        "hsc_marks_2026": "> 65%",
+        "scholarship_scheme": "Rs. 10,000 of Tuition Fee as Scholarship"
+      },
+      {
+        "program": "Bachelor of Science (Information Technology) (B.Sc. IT) - Honours",
+        "notes": "The Tuition Fee and Merit scholarship for the 4th year of B.Sc. (IT) Honours will be equivalent to the M.Sc. (IT) Fee and Scholarship approved for that year."
+      }
+    ],
+    "general_rules": [
+      "Scholarship Eligibility for Second and Third Year: Top 5 Students who have achieved a CGPA >= 9.5 without any backlogs at the end of the First or Second year will get 100% tuition fee as a scholarship.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "CMPICA",
+    "program_type": "Postgraduate (MCA)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "Master of Computer Applications (MCA)",
+        "fees": "1,40,000",
+        "scholarship_scheme": "100% of tuition Fee as Scholarship will be awarded to top five meritorious students of CMPICA."
+      },
+      {
+        "program": "Master of Computer Applications (MCA)",
+        "fees": "1,40,000",
+        "scholarship_scheme": "Rs. 10,000 of tuition Fee as Scholarship for All CHARUSAT Graduates of 2026"
+      }
+    ],
+    "general_rules": [
+      "Scholarship's eligibility for Second year:",
+      "1. Top 5 Students who have achieved a CGPA >= 9.5 without any backlogs at the end of the First year will get 100% tuition fee as a scholarship.",
+      "2. Students who have achieved a CGPA >= 8.5 without any backlogs at the end of the First year will get a scholarship of Rs. 10,000.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "CMPICA",
+    "program_type": "Postgraduate (M.Sc. IT)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "Master of Science (Information Technology) (M.Sc. IT)",
+        "fees": "1,00,000",
+        "scholarship_scheme": "100% of tuition Fee as Scholarship will be awarded to top five meritorious students of CMPICA."
+      },
+      {
+        "program": "Master of Science (Information Technology) (M.Sc. IT)",
+        "fees": "1,00,000",
+        "scholarship_scheme": "Rs. 5,000 of tuition Fee as Scholarship for All CHARUSAT Graduates of 2026"
+      }
+    ],
+    "general_rules": [
+      "Scholarship's eligibility for Second year:",
+      "1. Top 5 Students who have achieved a CGPA >= 9.5 without any backlogs at the end of the First year will get 100% tuition fee as a scholarship.",
+      "2. Students who have achieved a CGPA >= 8.5 without any backlogs at the end of the First year will get a scholarship of Rs. 10,000.",
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "BDIAS",
+    "program_type": "Undergraduate (Paramedical)",
+    "duration": "4 Years",
+    "details": [
+      {
+        "program": "Bachelor of Medical Radiology and Imaging Technology",
+        "fees": "65,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      },
+      {
+        "program": "Bachelor of Medical Laboratory Sciences (BMLS)",
+        "fees": "65,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      },
+      {
+        "program": "Bachelor of Anaesthesia and Operation Theater Technology (B.AOTT)",
+        "fees": "65,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      },
+      {
+        "program": "Bachelor of Optometry (BOPTM)",
+        "fees": "1,00,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  },
+  {
+    "institute": "BDIAS",
+    "program_type": "Postgraduate (Paramedical)",
+    "duration": "2 Years",
+    "details": [
+      {
+        "program": "Master of Medical Laboratory Sciences",
+        "fees": "1,00,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      },
+      {
+        "program": "Master of Medical Radiology and Imaging Technology",
+        "fees": "1,00,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      },
+      {
+        "program": "Master in Anaesthesia Operation Theater Technology",
+        "fees": "1,00,000",
+        "scholarship_scheme": "Merit Scholarship as per rules."
+      }
+    ],
+    "general_rules": [
+      "Scholarship continuation eligibility: Students who clear university exams without backlogs will be awarded scholarship in subsequent year."
+    ]
+  }
+]

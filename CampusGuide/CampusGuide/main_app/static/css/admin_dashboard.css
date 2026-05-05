@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #eef4fb;
+}
+
+/* LAYOUT */
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: #d8e3ef;
+  color: black;
+  padding: 25px 15px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+ 
+}
+
+.sidebar a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.sidebar a:hover{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* ===== SIDEBAR ITEM BOX STYLE (ADD ONLY) ===== */
+.sidebar ul li {
+  background: #ffffff;
+  color: #333;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.sidebar ul li:hover {
+  background: #1976d2;
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Active dashboard item */
+.sidebar ul li.active {
+  background: #1976d2;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Logout special box */
+.sidebar ul li.logout {
+  background: #1976d2;
+  color: white;
+  margin-top: 300px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sidebar ul li.logout:hover {
+  background: #c62828;
+}
+
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* ===== TOPBAR LEFT ALIGNMENT ===== */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* LOGO */
+.topbar-left img {
+  width: 80px;
+}
+
+
+/* ADMIN DASHBOARD TITLE */
+.dash-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-left: 20px;
+  color: #333;
+}
+
+
+.welcome {
+  font-weight: 600;
+  color: #333;
+}
+
+.top-logout {
+  text-decoration: none;
+  background: #1976d2;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.top-logout:hover {
+  background: #c62828;
+}
+
+/* SUMMARY CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+/* SUMMARY CARDS HOVER FIX */
+.cards .card {
+  background: #ffffff !important;
+  padding: 30px !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+
+.cards .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.cards .card::after {
+  display: none;
+}
+
+.cards .card:hover h3 {
+  color: #1976d2;
+}
+
+.cards .card:hover p {
+  transform: scale(1.05);
+}
+
+.cards .card h3 {
+  font-size: 15px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.cards .card p {
+  font-size: 32px;
+  font-weight: 800;
+  margin-top: 15px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* CHARTS */
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.chart-box {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  height: 400px; /* Fixed height for better chart rendering */
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-box h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+    border-left: 4px solid #1976d2;
+    padding-left: 10px;
+}
+
+.chart-box canvas {
+    flex: 1;
+}
+
+.chart-box:hover,
+.table-box:hover,
+.feedback-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder {
+  height: 220px;
+  background: #eaf3fe;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+/* BOTTOM */
+.bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+}
+
+.table-box,
+.feedback-box {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+}
+
+table th {
+  background: #f4f7fb;
+}
+
+/* FEEDBACK */
+.rating {
+  font-size: 26px;
+  color: #fbc02d;
+  margin: 10px 0;
+}
+
+.pulse-stars {
+    animation: starPulse 2s infinite ease-in-out;
+}
+
+@keyframes starPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* CHART SPIN ANIMATION */
+@keyframes spinRound {
+    from { transform: rotate(0deg) scale(0.5); opacity: 0; }
+    to { transform: rotate(360deg) scale(1); opacity: 1; }
+}
+
+.spin-chart {
+    animation: spinRound 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* BAR BOUNCE ANIMATION */
+@keyframes barBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.bounce-chart {
+    animation: barBounce 3s infinite ease-in-out;
+}

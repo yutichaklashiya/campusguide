@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: #eaf3fe;
+}
+.goog-te-banner-frame.skiptranslate {
+display: none !important;
+}
+
+body {
+top: 0px !important;
+}
+/* ================= HEADER ================= */
+.top-header {
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  /* BLUE BORDER TOP & BOTTOM */
+  border-top: 2px solid #1976d2;
+  border-bottom: 2px solid #1976d2;
+}
+
+/* LEFT SIDE (LOGO + TITLE) */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left img {
+  width: 70px;
+}
+
+.header-left h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.header-left h1 span {
+  color: #1976d2;
+}
+
+/* RIGHT SIDE (MENU) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header-right a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-right a:hover {
+  color: #1976d2;
+}
+
+.header-right select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+
+/* TEXT */
+.hero-text {
+  width: 45%;
+}
+
+.hero-text h1 {
+  font-size: 38px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+.hero-text h1 span {
+  color: #1976d2;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.secondary {
+  background: #1976d2;
+  border:#1976d2;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 2px 2px 2px gray;
+}
+
+.secondary:hover {
+  background: #e3effc;
+  color:#1976d2;
+  border: 1.5px solid #1976d2;
+}
+
+/* ================= HERO IMAGE (UPDATED) ================= */
+.hero-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 1000px;      /* 🔥 IMAGE BADI KI */
+  max-width: 100%;   /* responsive */
+  height: auto;      /* distortion nahi */
+  animation: floatHero 4s ease-in-out infinite; /* Floating animation added */
+}
+
+/* 🔁 FLOATING ANIMATION */
+@keyframes floatHero {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.chat-btn
+{
+  text-decoration: none;
+  color: white;
+}
+
+.chat-btn:hover{
+  color:#1976d2;
+}

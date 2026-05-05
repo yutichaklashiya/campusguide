@@ -1,0 +1,218 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% trans "Campus Guide - Unified Login" %}</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #eef5ff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    .header {
+      width: 100%;
+      height: 80px;
+      background: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      border-top: 2px solid #1976d2;
+      border-bottom: 2px solid #1976d2;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    .header-left { display: flex; align-items: center; gap: 10px; }
+    .header img { width: 50px; }
+    .header .title { font-size: 24px; font-weight: bold; }
+    .header .title span { color: #1976d2; }
+
+    /* LANGUAGE SELECTOR */
+    .lang-select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    /* MAIN CONTAINER */
+    .main-container {
+      flex: 1;
+      display: flex;
+      width: 100%;
+    }
+
+    /* LEFT & RIGHT SIDES */
+    .login-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .user-section { background: #fff; }
+    .admin-section { background: #f0f7ff; border-left: 1px solid #ddd; }
+
+    /* LOGIN FORM BOX */
+    .login-box {
+      width: 100%;
+      max-width: 380px;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .login-box h2 { margin: 0 0 10px; color: #333; }
+    .login-box p { color: #666; font-size: 14px; margin-bottom: 25px; }
+
+    /* FORM ELEMENTS */
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .login-box input:focus { border-color: #1976d2; box-shadow: 0 0 5px rgba(25,118,210,0.2); }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-box button:hover { background: #1565c0; }
+
+    /* LINKS */
+    .links { margin-top: 20px; font-size: 13px; color: #666; }
+    .links a { color: #1976d2; text-decoration: none; font-weight: bold; }
+    .links a:hover { text-decoration: underline; }
+
+    /* ERROR */
+    .error-msg { color: #d32f2f; font-size: 13px; margin-top: 15px; }
+
+    /* DIVIDER */
+    .divider {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 5;
+      font-weight: bold;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .main-container { flex-direction: column; }
+      .admin-section { border-left: none; border-top: 1px solid #ddd; }
+      .divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+      <span class="title">{% trans "Campus" %}<span>{% trans "Guide" %}</span></span>
+    </div>
+
+    <!-- ✅ LANGUAGE SELECTOR -->
+    <select name="language" class="lang-select" onchange="location.href='/' + this.value + '{{ request.path|slice:'3:' }}'">
+        {% get_current_language as CURRENT_LANG %}
+        <option value="en" {% if CURRENT_LANG == 'en' %}selected{% endif %}>English</option>
+        <option value="hi" {% if CURRENT_LANG == 'hi' %}selected{% endif %}>Hindi</option>
+        <option value="gu" {% if CURRENT_LANG == 'gu' %}selected{% endif %}>Gujarati</option>
+    </select>
+  </div>
+
+  <div class="main-container">
+    
+    <!-- LEFT: USER LOGIN -->
+    <div class="login-section user-section">
+      <div class="login-box">
+        <h2>{% trans "User Login" %}</h2>
+        <p>{% trans "Access your account to continue" %}</p>
+
+        <form method="post" action="{% url 'unified_login' %}">
+          {% csrf_token %}
+          <input type="hidden" name="login_type" value="user">
+          <input type="text" name="username" placeholder="{% trans "Username" %}" required>
+          <input type="password" name="password" placeholder="{% trans "Password" %}" required>
+          
+          <div style="text-align: right; margin-top: -5px;">
+            <a href="{% url 'password_reset' %}" style="font-size: 12px; color: #1976d2; text-decoration: none;">{% trans "Forgot password?" %}</a>
+          </div>
+
+          <button type="submit">{% trans "Login" %}</button>
+          
+          {% if error %}
+            <p class="error-msg">{{ error }}</p>
+          {% endif %}
+        </form>
+
+        <div class="links">
+          {% trans "Don’t have an account?" %}
+          <a href="{% url 'signup' %}">{% trans "Sign up" %}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">OR</div>
+
+    <!-- RIGHT: ADMIN LOGIN -->
+    <div class="login-section admin-section">
+      <div class="login-box">
+        <h2 style="color: #007bff;">{% trans "Admin Login" %}</h2>
+        <p>{% trans "Login as Admin to manage campus guide" %}</p>
+
+        <form method="post" action="{% url 'unified_login' %}">
+          {% csrf_token %}
+          <input type="hidden" name="login_type" value="admin">
+          <input type="text" name="username" placeholder="{% trans "Username" %}" required>
+          <input type="password" name="password" placeholder="{% trans "Password" %}" required>
+
+          <button type="submit" style="background: #007bff;">{% trans "Admin Login" %}</button>
+          
+          {% if admin_error %}
+            <p class="error-msg">{{ admin_error }}</p>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

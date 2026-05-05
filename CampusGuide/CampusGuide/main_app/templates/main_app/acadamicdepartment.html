@@ -1,0 +1,128 @@
+{% extends "main_app/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/acadamicdepartment.css' %}">
+
+  <!-- TITLE -->
+  <div class="page-title">
+    <h1>{% trans "Academic Departments" %}</h1>
+    <p>{% trans "Charusat University – Faculties & Departments" %}</p>
+  </div>
+
+  <!-- DEPARTMENTS -->
+ <section class="departments">
+
+  <!-- CMPICA -->
+  <div class="dept-card">
+    <h3>{% trans "CMPICA – Smt. Chandaben Mohanbhai Patel Institute of Computer Applications" %}</h3>
+    <ul>
+      <li>BCA</li>
+      <li>B.Sc (Information Technology)</li>
+      <li>MCA</li>
+      <li>M.Sc (Information Technology)</li>
+      <li>Ph.D (Computer Applications / IT)</li>
+    </ul>
+  </div>
+
+  <!-- CSPIT -->
+  <div class="dept-card">
+    <h3>{% trans "CSPIT – Chandubhai S Patel Institute of Technology" %}</h3>
+    <ul>
+      <li>B.Tech Computer Engineering</li>
+      <li>B.Tech Information Technology</li>
+      <li>B.Tech Mechanical Engineering</li>
+      <li>B.Tech Civil Engineering</li>
+      <li>B.Tech Electrical Engineering</li>
+      <li>B.Tech Electronics & Communication Engineering</li>
+      <li>M.Tech (Engineering Specializations)</li>
+      <li>Ph.D (Engineering)</li>
+    </ul>
+  </div>
+
+  <!-- DEPSTAR -->
+  <div class="dept-card">
+    <h3>{% trans "DEPSTAR – Devang Patel Institute of Advanced Technology & Research" %}</h3>
+    <ul>
+      <li>B.Tech Computer Engineering</li>
+      <li>B.Tech Computer Science & Engineering</li>
+      <li>B.Tech Information Technology</li>
+      <li>M.Tech Computer Engineering</li>
+      <li>Ph.D (Computer Engineering )</li>
+    </ul>
+  </div>
+
+  <!-- IIIM -->
+  <div class="dept-card">
+    <h3>{% trans "IIIM – Indukaka Ipcowala Institute of Management" %}</h3>
+    <ul>
+      <li>BBA</li>
+      <li>MBA</li>
+      <li>Ph.D (Management Studies)</li>
+    </ul>
+  </div>
+
+  <!-- RPCP -->
+  <div class="dept-card">
+    <h3>{% trans "RPCP – Ramanbhai Patel College of Pharmacy" %}</h3>
+    <ul>
+      <li>B.Pharm</li>
+      <li>M.Pharm (Various Specializations)</li>
+      <li>Ph.D (Pharmacy)</li>
+    </ul>
+  </div>
+
+  <!-- PDPIAS -->
+  <div class="dept-card">
+    <h3>{% trans "PDPIAS – P. D. Patel Institute of Applied Sciences" %}</h3>
+    <ul>
+      <li>B.Sc (Physics)</li>
+      <li>B.Sc (Chemistry)</li>
+      <li>B.Sc (Mathematics)</li>
+      <li>B.Sc (Biotechnology / Microbiology)</li>
+      <li>M.Sc (Physics)</li>
+      <li>M.Sc (Chemistry)</li>
+      <li>M.Sc (Mathematics)</li>
+      <li>M.Sc (Biotechnology / Microbiology)</li>
+      <li>Ph.D (Science)</li>
+    </ul>
+  </div>
+
+  <!-- MTIN -->
+  <div class="dept-card">
+    <h3>{% trans "MTIN – Manikaka Topawala Institute of Nursing" %}</h3>
+    <ul>
+      <li>B.Sc Nursing</li>
+      <li>GNM (General Nursing & Midwifery)</li>
+      <li>Post Basic B.Sc Nursing</li>
+      <li>M.Sc Nursing (All Specializations)</li>
+      <li>Ph.D (Nursing)</li>
+    </ul>
+  </div>
+
+  <!-- BDIPS -->
+  <div class="dept-card">
+    <h3>{% trans "BDIPS – Bapubhai Desaibhai Patel Institute of Paramedical Sciences" %}</h3>
+    <ul>
+      <li>B.Sc Medical Laboratory Technology</li>
+      <li>B.Sc Medical Imaging Technology</li>
+      <li>B.Sc Operation Theatre & Anaesthesia Technology</li>
+      <li>B.Optometry</li>
+      <li>M.Sc (Allied Health Sciences)</li>
+      <li>Ph.D (Allied / Paramedical Sciences)</li>
+    </ul>
+  </div>
+
+  <!-- ARIP -->
+  <div class="dept-card">
+    <h3>{% trans "ARIP – Ashok & Rita Patel Institute of Physiotherapy" %}</h3>
+    <ul>
+      <li>Bachelor of Physiotherapy (BPT)</li>
+      <li>Master of Physiotherapy (MPT – Various Specializations)</li>
+      <li>Ph.D (Physiotherapy)</li>
+    </ul>
+  </div>
+
+</section>
+{% endblock %}

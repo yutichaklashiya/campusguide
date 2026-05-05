@@ -1,0 +1,368 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>{% trans "Review & Feedback Analysis" %}</title>
+
+<link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+
+<style>
+
+body{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background:#f3f6fb;
+margin:0;
+color: #333;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:25px;
+margin-bottom: 30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #555;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.rating-value{
+font-size:64px;
+font-weight: 800;
+color:#1976d2;
+line-height: 1;
+margin-bottom: 10px;
+}
+
+.stars-display{
+color:#fbc02d;
+font-size:32px;
+margin-bottom: 15px;
+}
+
+.stat-label {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.bar-container {
+    margin-bottom: 20px;
+}
+
+.bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.bar{
+height:14px;
+background:#eef2f7;
+border-radius:10px;
+overflow:hidden;
+}
+
+.bar-fill{
+height:100%;
+background: linear-gradient(90deg, #1976d2, #42a5f5);
+border-radius: 10px;
+}
+
+.total-count {
+    font-size: 48px;
+    font-weight: 800;
+    color: #2e7d32;
+}
+
+.review-list{
+margin-top:25px;
+}
+
+.review-item{
+background: #fff;
+padding: 20px;
+border-radius: 12px;
+margin-bottom: 15px;
+border-left: 5px solid #1976d2;
+box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+display: flex;
+flex-direction: column;
+gap: 10px;
+transition: all 0.3s ease;
+cursor: pointer;
+}
+
+.review-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: #f8fbff;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviewer-name {
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
+}
+
+.review-date {
+    font-size: 13px;
+    color: #999;
+}
+
+.review-stars {
+    color: #fbc02d;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.review-stars span {
+    color: #666;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    font-style: italic;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h2>{% trans "Admin Panel" %}</h2>
+
+<ul>
+
+<li>
+<a href="{% url 'admin_dashboard' %}">{% trans "Dashboard" %}</a>
+</li>
+
+<li>
+<a href="{% url 'search_analytics' %}">{% trans "Search Analytics" %}</a>
+</li>
+
+<li class="active">
+<a href="{% url 'admin_review' %}">{% trans "Feedback & Reviews" %}</a>
+</li>
+
+<li>
+<a href="{% url 'admin_languse' %}">{% trans "Language Usage" %}</a>
+</li>
+
+<li>
+<a href="{% url 'admin_userquery' %}">{% trans "User Query Logs" %}</a>
+</li>
+
+</ul>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div class="topbar-left">
+
+<img src="{% static 'images/logo.jpg' %}">
+<h1 class="dash-title">{% trans "Admin Dashboard" %}</h1>
+
+</div>
+
+<div class="topbar-right">
+
+<span class="welcome">{% trans "Welcome" %}, {{ request.user.username }}</span>
+
+<a href="{% url 'login' %}" class="top-logout">{% trans "Logout" %}</a>
+
+</div>
+
+</div>
+
+
+<h1 style="margin-bottom:25px;">{% trans "Review & Feedback Analysis" %}</h1>
+
+
+<div class="grid">
+
+<!-- Average Rating -->
+
+<div class="card">
+
+<h3>{% trans "Average Rating" %}</h3>
+
+<div class="rating-value">
+
+{{ avg_rating }}<small style="font-size: 24px; color: #999;">/5</small>
+
+</div>
+
+<div class="stars-display">
+    {% if avg_rating >= 4.5 %} ★★★★★
+    {% elif avg_rating >= 3.5 %} ★★★★☆
+    {% elif avg_rating >= 2.5 %} ★★★☆☆
+    {% elif avg_rating >= 1.5 %} ★★☆☆☆
+    {% else %} ★☆☆☆☆
+    {% endif %}
+</div>
+
+</div>
+
+
+<!-- Feedback Sentiment -->
+
+<div class="card">
+
+<h3>{% trans "Feedback Sentiment" %}</h3>
+
+<div class="bar-container">
+    <div class="bar-label">
+        <span>{% trans "Positive" %}</span>
+        <span>{{ positive_percent }}%</span>
+    </div>
+    <div class="bar">
+        <div class="bar-fill" style="width:{{ positive_percent }}%"></div>
+    </div>
+</div>
+
+<div class="bar-container">
+    <div class="bar-label">
+        <span>{% trans "Negative" %}</span>
+        <span>{{ negative_percent }}%</span>
+    </div>
+    <div class="bar">
+        <div class="bar-fill" style="width:{{ negative_percent }}%;background:#ef4444"></div>
+    </div>
+</div>
+
+</div>
+
+<!-- Total Feedback (Real-time) -->
+<div class="card">
+    <h3>{% trans "Total Feedback" %}</h3>
+    <div class="total-count">{{ total_feedback }}</div>
+    <p class="stat-label">{% trans "Real-time responses" %}</p>
+    <div style="margin-top: 20px; color: #1976d2; font-weight: bold; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 24px; animation: bounce 2s infinite;">↑</span> 
+        <span id="update-timer">{% trans "Updated now" %}</span>
+    </div>
+</div>
+
+<style>
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+</style>
+
+<script>
+    function updateTime() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById('update-timer').innerText = "{% trans 'Last updated at' %} " + timeStr;
+    }
+    // Update every minute
+    setInterval(updateTime, 60000);
+    // Initial call
+    updateTime();
+</script>
+
+</div>
+
+
+<!-- Recent Reviews -->
+
+<div class="card" style="margin-top:25px">
+
+<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f0f4f8; padding-bottom: 15px; margin-bottom: 20px;">
+    <h3 style="margin: 0; border: none; padding: 0;">{% trans "Recent Reviews" %}</h3>
+    <span style="background: #e3f2fd; color: #1976d2; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px;">
+        {% trans "Latest" %} 10
+    </span>
+</div>
+
+<div class="review-list">
+
+{% for review in recent_reviews %}
+
+<div class="review-item">
+    <div class="review-header">
+        <span class="reviewer-name">{{ review.name }}</span>
+        <span class="review-date">{{ review.created_at|date:"d M Y, H:i" }}</span>
+    </div>
+    <div class="review-stars">
+        {% if review.rating == 5 %} ★★★★★
+        {% elif review.rating == 4 %} ★★★★☆
+        {% elif review.rating == 3 %} ★★★☆☆
+        {% elif review.rating == 2 %} ★★☆☆☆
+        {% else %} ★☆☆☆☆
+        {% endif %}
+        <span>({{ review.rating }}/5)</span>
+    </div>
+    <div class="review-text">
+        "{{ review.message }}"
+    </div>
+</div>
+
+{% empty %}
+
+<p style="text-align: center; color: #999; padding: 40px;">{% trans "No reviews yet" %}</p>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

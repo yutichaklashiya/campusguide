@@ -1,0 +1,67 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{% trans "Campus Guide - Admin Login" %}</title>
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+    <span class="title">
+        {% trans "Campus" %}<span>{% trans "Guide" %}</span>
+    </span>
+</div>
+
+
+<!-- MAIN CONTAINER -->
+<div class="container">
+
+
+<!-- LOGIN FORM -->
+<form class="login-form" method="POST" action="{% url 'admin_login' %}">
+
+{% csrf_token %}
+
+<h2>{% trans "Admin Login" %}</h2>
+<p>{% trans "Login as Admin to continue" %}</p>
+
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+
+<input type="text" name="username" placeholder="{% trans "Username" %}" required>
+
+
+<input type="password" name="password" placeholder="{% trans "Password" %}" required>
+
+      <span class="link">
+        <a href="{% url 'password_reset' %}">{% trans "Forgot password?" %}</a>
+      </span>
+
+      <button type="submit" class="btn">{% trans "Login" %}</button>
+
+
+</form>
+
+
+<!-- ROBOT IMAGE -->
+<div class="robot">
+<img src="{% static 'images/back2.jpeg' %}" alt="Robot">
+</div>
+
+
+</div>
+
+</body>
+</html>
