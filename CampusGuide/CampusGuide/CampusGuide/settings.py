@@ -4,9 +4,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-li#1a3$&l=ext(f36!ty^bz53c^p+_spyvhsbnt1p1za3wv-wt'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['Campuguide.pythonanywhere.com']
 
 
 # ✅ Application definition
@@ -131,7 +131,7 @@ LOCALE_PATHS = [
 
 
 # ✅ Static files
-STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 # ✅ Default primary key
